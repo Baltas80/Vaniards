@@ -38,7 +38,7 @@ The complete editable GDevelop project and its asset tree must be kept together 
 7. Complete the store listing and required declarations.
 8. Promote the tested release to production.
 
-Google Play requires new apps and app updates submitted from 31 August 2026 to target Android 16 / API 36 or higher. citeturn992316search0turn992316search2
+Google Play API requirement: https://developer.android.com/google/play/requirements/target-sdk
 
 ## License and third-party assets
 
