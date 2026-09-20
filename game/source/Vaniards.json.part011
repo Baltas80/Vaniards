@@ -1,0 +1,1000 @@
+                                {
+                                  "type": {
+                                    "value": "ObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\"",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossLocation",
+                                    "Location",
+                                    "=",
+                                    "3"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::AddObjectPositionTween"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos3\"",
+                                    "BossLocation.X()",
+                                    "BossLocation.Y()",
+                                    "\"linear\"",
+                                    "1000",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Comment",
+                              "color": {
+                                "b": 109,
+                                "g": 230,
+                                "r": 255,
+                                "textB": 0,
+                                "textG": 0,
+                                "textR": 0
+                              },
+                              "comment": "When the tween has finished, change the phase variable and restart the timer.\nThis should also end the cutscene for the player."
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::Exists"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos3\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::HasFinished"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos3\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetNumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "=",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetNumberVariable"
+                                  },
+                                  "parameters": [
+                                    "Cutscene",
+                                    "=",
+                                    "0"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ResetObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::RemoveTween"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos3\""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Primary Boss Movement Phases",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Since the boss should move to BossLocation 2 or 3 in numerous phases, an OR condition is used to remove the need to duplicate events numerous times."
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Or"
+                              },
+                              "parameters": [],
+                              "subInstructions": [
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "=",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "=",
+                                    "3"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "=",
+                                    "6"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "=",
+                                    "9"
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "ObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\"",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossLocation",
+                                    "Location",
+                                    "=",
+                                    "2"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::AddObjectPositionTween"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos2\"",
+                                    "BossLocation.X()",
+                                    "BossLocation.Y()",
+                                    "\"linear\"",
+                                    "1000",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Comment",
+                              "color": {
+                                "b": 109,
+                                "g": 230,
+                                "r": 255,
+                                "textB": 0,
+                                "textG": 0,
+                                "textR": 0
+                              },
+                              "comment": "To make sure the boss is always facing away from the wall, it is flipped horizontally after the move ends.\nThe phase is then increased by 1 to move onto the next phase."
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::Exists"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos2\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::HasFinished"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos2\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Flippable",
+                                    "yes"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetNumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "+",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ResetObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::RemoveTween"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos2\""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Or"
+                              },
+                              "parameters": [],
+                              "subInstructions": [
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "=",
+                                    "2"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "=",
+                                    "5"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "=",
+                                    "7"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "=",
+                                    "10"
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "ObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\"",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossLocation",
+                                    "Location",
+                                    "=",
+                                    "3"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::AddObjectPositionTween"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos3\"",
+                                    "BossLocation.X()",
+                                    "BossLocation.Y()",
+                                    "\"linear\"",
+                                    "1000",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::Exists"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos3\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::HasFinished"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos3\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "FlippableCapability::FlippableBehavior::FlipX"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Flippable",
+                                    "no"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "SetNumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "+",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ResetObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::RemoveTween"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos3\""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Boss phases 4 and 8 has the boss move to the upper corners of the boss room, so they are separate from the 2 main phases."
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberObjectVariable"
+                              },
+                              "parameters": [
+                                "BossSkull",
+                                "BossPhase",
+                                "=",
+                                "4"
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "ObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\"",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossLocation",
+                                    "Location",
+                                    "=",
+                                    "4"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::AddObjectPositionTween"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos4\"",
+                                    "BossLocation.X()",
+                                    "BossLocation.Y()",
+                                    "\"linear\"",
+                                    "1000",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::Exists"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos4\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::HasFinished"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos4\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetNumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "+",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ResetObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::RemoveTween"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos4\""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberObjectVariable"
+                              },
+                              "parameters": [
+                                "BossSkull",
+                                "BossPhase",
+                                "=",
+                                "8"
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "ObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\"",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "NumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossLocation",
+                                    "Location",
+                                    "=",
+                                    "8"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::AddObjectPositionTween"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos8\"",
+                                    "BossLocation.X()",
+                                    "BossLocation.Y()",
+                                    "\"linear\"",
+                                    "1000",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::Exists"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos8\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::HasFinished"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos8\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "SetNumberObjectVariable"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "BossPhase",
+                                    "+",
+                                    "1"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ResetObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::RemoveTween"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "Tween",
+                                    "\"MoveToPos8\""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Once the boss passes phase 10, there are no new movements, so reset to phase 1."
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberObjectVariable"
+                              },
+                              "parameters": [
+                                "BossSkull",
+                                "BossPhase",
+                                "=",
+                                "11"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Once"
+                              },
+                              "parameters": []
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberObjectVariable"
+                              },
+                              "parameters": [
+                                "BossSkull",
+                                "BossPhase",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Boss Death and Win Scenario",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NbObjet"
+                              },
+                              "parameters": [
+                                "BossSkull",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetSoundChannelVolume"
+                              },
+                              "parameters": [
+                                "",
+                                "100",
+                                "=",
+                                "clamp(SoundChannelVolume(100)-3,0,100)"
+                              ]
+                            }
+                          ],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "SoundStopped"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "11"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::AddObjectOpacityTween"
+                                  },
+                                  "parameters": [
+                                    "FadeObject",
+                                    "Tween",
+                                    "\"EndFadeOut\"",
+                                    "255",
+                                    "\"linear\"",
+                                    "1000",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "Tween::Exists"
+                                  },
+                                  "parameters": [
+                                    "FadeObject",
+                                    "Tween",
+                                    "\"EndFadeOut\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Tween::HasFinished"
+                                  },
+                                  "parameters": [
+                                    "FadeObject",
+                                    "Tween",
+                                    "\"EndFadeOut\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "Scene"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "\"WinScreen\"",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Cutscenes",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
