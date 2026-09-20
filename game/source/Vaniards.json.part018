@@ -1,0 +1,1000 @@
+                        "heroFSM",
+                        "=",
+                        "\"Fall\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Ground Events",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "These states can only be activated if the hero character is on the floor. This is to avoid conflicts between ground events and falling events."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PlatformBehavior::IsOnFloor"
+                      },
+                      "parameters": [
+                        "HeroHitbox",
+                        "PlatformerObject"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Attack",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Switch to Attack state if:\nThe player is on the floor (parent event)\nThe attack button has been released since last attack.\nThe attack button or key is pressed."
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Or"
+                              },
+                              "parameters": [],
+                              "subInstructions": [
+                                {
+                                  "type": {
+                                    "value": "Gamepads::C_Button_pressed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "1",
+                                    "gamepadAttack",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "KeyFromTextPressed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "keyboardAttack"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "NumberObjectVariable"
+                              },
+                              "parameters": [
+                                "Hero",
+                                "hasAttacked",
+                                "=",
+                                "0"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Once"
+                              },
+                              "parameters": []
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringObjectVariable"
+                              },
+                              "parameters": [
+                                "Hero",
+                                "heroFSM",
+                                "=",
+                                "\"Attack\""
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Run",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Switch to the Run state if: \nThe player is on the floor (parent event)\nOne of the run buttons or keys are pressed."
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Or"
+                              },
+                              "parameters": [],
+                              "subInstructions": [
+                                {
+                                  "type": {
+                                    "value": "Gamepads::C_Button_pressed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "1",
+                                    "gamepadLeft",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Gamepads::C_Button_pressed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "1",
+                                    "gamepadRight",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "KeyFromTextPressed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "keyboardLeft"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "KeyFromTextPressed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "keyboardRight"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Gamepads::C_Axis_pushed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "1",
+                                    "\"LEFT\"",
+                                    "\"LEFT\"",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "Gamepads::C_Axis_pushed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "1",
+                                    "\"LEFT\"",
+                                    "\"RIGHT\"",
+                                    ""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Once"
+                              },
+                              "parameters": []
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringObjectVariable"
+                              },
+                              "parameters": [
+                                "Hero",
+                                "heroFSM",
+                                "=",
+                                "\"Run\""
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Dash",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Player can only dash if:\nThe dash button has been released since the last dash.\nThe current stamina is greater or equal to the dash cost.\nThe dash button or key is pressed."
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberObjectVariable"
+                              },
+                              "parameters": [
+                                "Hero",
+                                "hasDashed",
+                                "=",
+                                "0"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "NumberObjectVariable"
+                              },
+                              "parameters": [
+                                "Hero",
+                                "heroStam",
+                                ">=",
+                                "DashCost"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Or"
+                              },
+                              "parameters": [],
+                              "subInstructions": [
+                                {
+                                  "type": {
+                                    "value": "Gamepads::C_Button_pressed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "1",
+                                    "gamepadDash",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "KeyFromTextPressed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "keyboardDash"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Once"
+                              },
+                              "parameters": []
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringObjectVariable"
+                              },
+                              "parameters": [
+                                "Hero",
+                                "heroFSM",
+                                "=",
+                                "\"Dash\""
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Jump",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Player can only jump if:\nThe jump button has been released since the last dash.\nThe player is on the floor.\nThe jump button or key is pressed."
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberObjectVariable"
+                              },
+                              "parameters": [
+                                "Hero",
+                                "hasJumped",
+                                "=",
+                                "0"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Or"
+                              },
+                              "parameters": [],
+                              "subInstructions": [
+                                {
+                                  "type": {
+                                    "value": "Gamepads::C_Button_pressed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "1",
+                                    "gamepadJump",
+                                    ""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "KeyFromTextPressed"
+                                  },
+                                  "parameters": [
+                                    "",
+                                    "keyboardJump"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::Once"
+                              },
+                              "parameters": []
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetStringObjectVariable"
+                              },
+                              "parameters": [
+                                "Hero",
+                                "heroFSM",
+                                "=",
+                                "\"Jump\""
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ],
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "associatedLayout": "Stage",
+      "name": "HeroFSMAttack",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Actions",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "The initial actions will help set the animation, ensure that attacking can only occur once, even in the same state, by setting a hasAttacked variable, and play the sword sound effect."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Hero",
+                    "hasAttacked",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Hero",
+                    "Animation",
+                    "=",
+                    "\"Attack\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Hero",
+                    "hasAttacked",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PlaySoundOnChannel"
+                  },
+                  "parameters": [
+                    "",
+                    "sword sound.wav",
+                    "5",
+                    "",
+                    "100",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "To avoid spamming any of the jumps, dashes, or attacks, require the player to release the key or button before they can be used again."
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Can only dash once",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Gamepads::C_Button_pressed"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "gamepadDash",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "keyboardDash"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Hero",
+                        "hasDashed",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Can only jump once",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Gamepads::C_Button_pressed"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "gamepadJump",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "keyboardJump"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Hero",
+                        "hasJumped",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Reset Hit State",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "After being hit, allow for a moment of invulnerability, to avoid endlessly looping damage."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ObjectTimer"
+                      },
+                      "parameters": [
+                        "Hero",
+                        "\"HasBeenHit\"",
+                        "0.6"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Opacity"
+                      },
+                      "parameters": [
+                        "Hero",
+                        "=",
+                        "255"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Transitions",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "As this hero does not have a running attack, they can only transition from an attack into either idle or falling."
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Idle",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "To transition back to idle, both the current animation AND the animation state is checked.\nThis is because the character could transition to this state with a finished animation from Running or Idle. By joining these two conditions the idle state only occurs when it should."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                      },
+                      "parameters": [
+                        "Hero",
+                        "Animation",
+                        "=",
+                        "\"Attack\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+                      },
+                      "parameters": [
+                        "Hero",
+                        "Animation"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlatformBehavior::IsOnFloor"
+                      },
+                      "parameters": [
+                        "HeroHitbox",
+                        "PlatformerObject"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringObjectVariable"
+                      },
+                      "parameters": [
+                        "Hero",
+                        "heroFSM",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "disabled": true,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": []
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Fall",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PlatformBehavior::IsFalling"
+                      },
+                      "parameters": [
+                        "HeroHitbox",
+                        "PlatformerObject"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringObjectVariable"
+                      },
+                      "parameters": [
+                        "Hero",
+                        "heroFSM",
+                        "=",
+                        "\"Fall\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ],
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "associatedLayout": "Stage",
+      "name": "HeroFSMDash",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Actions",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "While there are a few different ways to implement a dash, this dash is intended to be viewed as a \"Dodge/Evade\" style dash.\nAs our character art doesn't have a custom dash animation, we have copied one frame from the running animation to make a new animation of \"dash\".\nFor this demo, we always want to ensure that the player cannot spam actions by holding down a button, so a toggle variable of \"hasDashed\" is set to 1. In other states, we need to ensure we're requiring this variable be 0 before we can dash.\nTo make it visible that we are dashing, we change the opacity to 100. This also gives us a shortcut when dealing with damage/knockback, as we can make Opacity of 255 a requirement before counting a \"Hit\".\nAt the start of this state we will reset the Dash timer, and unpause it as well."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Hero",
+                    "Animation",
+                    "=",
+                    "\"Dash\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Hero",
+                    "hasDashed",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Opacity"
+                  },
+                  "parameters": [
+                    "Hero",
+                    "=",
+                    "230"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetObjectTimer"
+                  },
+                  "parameters": [
+                    "Hero",
+                    "\"Dash\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "UnPauseObjectTimer"
+                  },
+                  "parameters": [
+                    "Hero",
+                    "\"Dash\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ChangeLayer"
+                  },
+                  "parameters": [
+                    "Hero",
+                    "\"DashEffect\""
+                  ]
+                }
+              ]
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Dash",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Before dashing, ensure the following are true:\nThe hero is currently in the dash animation.\nThe timer has not reached the max dash time.\nThe timer is not pasued."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                      },
+                      "parameters": [
+                        "Hero",
+                        "Animation",
+                        "=",
+                        "\"Dash\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "ObjectTimer"
