@@ -1,0 +1,1000 @@
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 48,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 208
+                          },
+                          {
+                            "x": 48,
+                            "y": 208
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Walking-7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 48,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 208
+                          },
+                          {
+                            "x": 48,
+                            "y": 208
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Walking-8.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 48,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 208
+                          },
+                          {
+                            "x": 48,
+                            "y": 208
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "Wolf",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "StartDash",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "enemyHP",
+              "type": "number",
+              "value": 20
+            },
+            {
+              "name": "enemyDMG",
+              "type": "number",
+              "value": 20
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "PlatformerObject",
+              "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "acceleration": 15000,
+              "canGrabPlatforms": false,
+              "deceleration": 15000,
+              "gravity": 1000,
+              "ignoreDefaultControls": true,
+              "jumpSpeed": 600,
+              "jumpSustainTime": 0.2,
+              "ladderClimbingSpeed": 150,
+              "maxFallingSpeed": 700,
+              "maxSpeed": 600,
+              "roundCoordinates": true,
+              "slopeMaxAngle": 60,
+              "xGrabTolerance": 10,
+              "yGrabOffset": 0
+            }
+          ],
+          "animations": [
+            {
+              "name": "Dasher",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Dasher-4-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 88.5
+                          },
+                          {
+                            "x": 205,
+                            "y": 82.5
+                          },
+                          {
+                            "x": 204,
+                            "y": 126.5
+                          },
+                          {
+                            "x": 34,
+                            "y": 128
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Dasher-1-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 88.5
+                          },
+                          {
+                            "x": 205,
+                            "y": 82.5
+                          },
+                          {
+                            "x": 204,
+                            "y": 126.5
+                          },
+                          {
+                            "x": 34,
+                            "y": 128
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Dasher-2-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 88.5
+                          },
+                          {
+                            "x": 205,
+                            "y": 82.5
+                          },
+                          {
+                            "x": 204,
+                            "y": 126.5
+                          },
+                          {
+                            "x": 34,
+                            "y": 128
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Dasher-3-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 28,
+                            "y": 88.5
+                          },
+                          {
+                            "x": 205,
+                            "y": 82.5
+                          },
+                          {
+                            "x": 204,
+                            "y": 126.5
+                          },
+                          {
+                            "x": 34,
+                            "y": 128
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "BossSkull",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "enemyHP",
+              "type": "number",
+              "value": 100
+            },
+            {
+              "name": "enemyDMG",
+              "type": "number",
+              "value": 35
+            },
+            {
+              "name": "BossPhase",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "SkullFire",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.16670000553131104,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullFire-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 176
+                          },
+                          {
+                            "x": 265,
+                            "y": 176
+                          },
+                          {
+                            "x": 230,
+                            "y": 396
+                          },
+                          {
+                            "x": 85,
+                            "y": 396
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullFire-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 176
+                          },
+                          {
+                            "x": 265,
+                            "y": 176
+                          },
+                          {
+                            "x": 230,
+                            "y": 396
+                          },
+                          {
+                            "x": 85,
+                            "y": 396
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullFire-3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 176
+                          },
+                          {
+                            "x": 265,
+                            "y": 176
+                          },
+                          {
+                            "x": 230,
+                            "y": 396
+                          },
+                          {
+                            "x": 85,
+                            "y": 396
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullFire-4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 176
+                          },
+                          {
+                            "x": 265,
+                            "y": 176
+                          },
+                          {
+                            "x": 230,
+                            "y": 396
+                          },
+                          {
+                            "x": 85,
+                            "y": 396
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullFire-5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 176
+                          },
+                          {
+                            "x": 265,
+                            "y": 176
+                          },
+                          {
+                            "x": 230,
+                            "y": 396
+                          },
+                          {
+                            "x": 85,
+                            "y": 396
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullFire-6.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 176
+                          },
+                          {
+                            "x": 265,
+                            "y": 176
+                          },
+                          {
+                            "x": 230,
+                            "y": 396
+                          },
+                          {
+                            "x": 85,
+                            "y": 396
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullFire-7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 176
+                          },
+                          {
+                            "x": 265,
+                            "y": 176
+                          },
+                          {
+                            "x": 230,
+                            "y": 396
+                          },
+                          {
+                            "x": 85,
+                            "y": 396
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullFire-8.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 176
+                          },
+                          {
+                            "x": 265,
+                            "y": 176
+                          },
+                          {
+                            "x": 230,
+                            "y": 396
+                          },
+                          {
+                            "x": 85,
+                            "y": 396
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "SkullNoFire",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.5,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullNoFire-1-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 27,
+                            "y": 48
+                          },
+                          {
+                            "x": 200,
+                            "y": 48
+                          },
+                          {
+                            "x": 186,
+                            "y": 268
+                          },
+                          {
+                            "x": 25,
+                            "y": 268
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullNoFire-2-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 27,
+                            "y": 48
+                          },
+                          {
+                            "x": 200,
+                            "y": 48
+                          },
+                          {
+                            "x": 186,
+                            "y": 268
+                          },
+                          {
+                            "x": 25,
+                            "y": 268
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullNoFire-3-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 27,
+                            "y": 48
+                          },
+                          {
+                            "x": 200,
+                            "y": 48
+                          },
+                          {
+                            "x": 186,
+                            "y": 268
+                          },
+                          {
+                            "x": 25,
+                            "y": 268
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "SkullNoFire-4-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 92,
+                        "y": 172
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 27,
+                            "y": 48
+                          },
+                          {
+                            "x": 200,
+                            "y": 48
+                          },
+                          {
+                            "x": 186,
+                            "y": 268
+                          },
+                          {
+                            "x": 25,
+                            "y": 268
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "BossLocation",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "folded": true,
+              "name": "Location",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "BossLocation",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "BossLocation-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "Checkpoint",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Checkpoint",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Checkpoint-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "DeathPit",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "enemyDMG",
+              "type": "number",
+              "value": 100
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Pit",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Pit-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "Pit",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Pit",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Pit.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "PitBase",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "PItBase",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "PItBase-1.png",
+                      "points": [],
