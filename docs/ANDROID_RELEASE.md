@@ -15,9 +15,12 @@
 
 ## Build gate
 
-- [ ] Open updated `Vaniards.json` with the existing `assets/` folder
+- [x] GitHub Actions assembles and validates updated `Vaniards.json`
+- [x] GitHub Actions exports the GDevelop project to HTML5
+- [x] GitHub Actions generates an Android debug APK
+- [x] GitHub Actions generates an unsigned release AAB
 - [ ] Desktop preview passes
-- [ ] Android test build installs
+- [ ] Android test build installs on a physical device
 - [ ] Touch movement works
 - [ ] Touch jump works
 - [ ] Touch attack works
