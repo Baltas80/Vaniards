@@ -1,0 +1,1000 @@
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "bottomMargin": 24,
+          "height": 90,
+          "leftMargin": 24,
+          "name": "TouchLeft",
+          "rightMargin": 24,
+          "texture": "Selector-1-1.png",
+          "tiled": true,
+          "topMargin": 24,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 90,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "bottomMargin": 24,
+          "height": 90,
+          "leftMargin": 24,
+          "name": "TouchRight",
+          "rightMargin": 24,
+          "texture": "Selector-1-1.png",
+          "tiled": true,
+          "topMargin": 24,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 90,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "bottomMargin": 24,
+          "height": 90,
+          "leftMargin": 24,
+          "name": "TouchJump",
+          "rightMargin": 24,
+          "texture": "Selector-1-1.png",
+          "tiled": true,
+          "topMargin": 24,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 90,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "bottomMargin": 24,
+          "height": 90,
+          "leftMargin": 24,
+          "name": "TouchAttack",
+          "rightMargin": 24,
+          "texture": "Selector-1-1.png",
+          "tiled": true,
+          "topMargin": 24,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 90,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "bottomMargin": 24,
+          "height": 90,
+          "leftMargin": 24,
+          "name": "TouchDash",
+          "rightMargin": 24,
+          "texture": "Selector-1-1.png",
+          "tiled": true,
+          "topMargin": 24,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 90,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "name": "TouchLeftLabel",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "<",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 18,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "center",
+            "wordWrap": false,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "TouchRightLabel",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": ">",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 18,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "center",
+            "wordWrap": false,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "TouchJumpLabel",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "JUMP",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 18,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "center",
+            "wordWrap": false,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "TouchAttackLabel",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "ATK",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 18,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "center",
+            "wordWrap": false,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "TouchDashLabel",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "DASH",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 18,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "center",
+            "wordWrap": false,
+            "verticalTextAlignment": "top"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "folderName": "Background",
+            "children": [
+              {
+                "objectName": "BG1"
+              },
+              {
+                "objectName": "BG2"
+              }
+            ]
+          },
+          {
+            "folderName": "UI",
+            "children": [
+              {
+                "objectName": "GUIMain"
+              },
+              {
+                "objectName": "GUIHealthPanel"
+              },
+              {
+                "objectName": "GUIStaminaPanel"
+              },
+              {
+                "objectName": "GUIHealthBar"
+              },
+              {
+                "objectName": "GUIStaminaBar"
+              },
+              {
+                "objectName": "GUIBitmapLives"
+              },
+              {
+                "objectName": "GUILivesLabel"
+              },
+              {
+                "objectName": "GameOver"
+              },
+              {
+                "objectName": "BitmapGameOver"
+              },
+              {
+                "objectName": "Stamina"
+              },
+              {
+                "objectName": "HP"
+              },
+              {
+                "objectName": "Debug"
+              }
+            ]
+          },
+          {
+            "objectName": "LevelMap"
+          },
+          {
+            "objectName": "Platform"
+          },
+          {
+            "objectName": "HeroHitbox"
+          },
+          {
+            "objectName": "Hero"
+          },
+          {
+            "objectName": "FadeObject"
+          },
+          {
+            "objectName": "CameraRoom"
+          },
+          {
+            "objectName": "HeroAttackHitbox"
+          },
+          {
+            "objectName": "BossRoom"
+          },
+          {
+            "objectName": "CutsceneCamera"
+          },
+          {
+            "objectName": "Barrier"
+          },
+          {
+            "objectName": "Right"
+          },
+          {
+            "objectName": "Left"
+          },
+          {
+            "objectName": "EnemyDeathFire"
+          },
+          {
+            "objectName": "Ghost"
+          },
+          {
+            "objectName": "Skeleton"
+          },
+          {
+            "objectName": "Wolf"
+          },
+          {
+            "objectName": "BossSkull"
+          },
+          {
+            "objectName": "BossLocation"
+          },
+          {
+            "objectName": "Checkpoint"
+          },
+          {
+            "objectName": "DeathPit"
+          },
+          {
+            "objectName": "Pit"
+          },
+          {
+            "objectName": "PitBase"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 51,
+            "g": 107,
+            "r": 250,
+            "textB": 255,
+            "textG": 255,
+            "textR": 255
+          },
+          "comment": "The main game includes many different object types and elements:\nSprite objects for the majority of player and enemy objects. \nTiled sprite objects for the backgrounds.\nPanel sprites (9-patch) objects for parts of the UI\nBitmap text objects fro any text.\nA tilemap object for the world layout itself.\n\nThe tilemap was made in LDtk and then imported into Tiled Map Editor, then finally exported into JSON format for use with GDevelop. More about using Tiled Map Editor directly can be found here: http://wiki.compilgames.net/doku.php/gdevelop5/objects/tilemap#creating_a_new_tilemap_step_by_step\nCollisions for the world are handled outside of the tileset, but making a single \"platform\" sprite object then placing as many as needed on the map, then stretching/rotating as required.\n\nAll enemy objects have object variables of enemyDMG and enemyHP for use with combat/damage management in later events.\nThe player has numerous object variables, those are explained in the various events that use them."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "The main event sheet for the level only contains events that must be included at the start of the scene."
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Vaniards Localization",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarGlobalTxt"
+                  },
+                  "parameters": [
+                    "Language",
+                    "=",
+                    "\"en\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "Stamina",
+                    "=",
+                    "\"Stamina\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "HP",
+                    "=",
+                    "\"HP\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "GameOver",
+                    "=",
+                    "\"Game Over\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "BitmapGameOver",
+                    "=",
+                    "\"Game Over\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "GUILivesLabel",
+                    "=",
+                    "\"LIVES: \""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "TouchJumpLabel",
+                    "=",
+                    "\"JUMP\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "TouchAttackLabel",
+                    "=",
+                    "\"ATK\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "TouchDashLabel",
+                    "=",
+                    "\"DASH\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarGlobalTxt"
+                  },
+                  "parameters": [
+                    "Language",
+                    "=",
+                    "\"es\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "Stamina",
+                    "=",
+                    "\"Resistencia\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "HP",
+                    "=",
+                    "\"Vida\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "GameOver",
+                    "=",
+                    "\"Fin de la partida\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "BitmapGameOver",
+                    "=",
+                    "\"Fin de la partida\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "GUILivesLabel",
+                    "=",
+                    "\"VIDAS: \""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "TouchJumpLabel",
+                    "=",
+                    "\"SALTO\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "TouchAttackLabel",
+                    "=",
+                    "\"ATQ\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "TouchDashLabel",
+                    "=",
+                    "\"DASH\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "Platform"
+              ]
+            },
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "CutsceneCamera"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetXY"
+              },
+              "parameters": [
+                "BitmapGameOver",
+                "=",
+                "CameraX(\"GUI\",0)-(BitmapGameOver.Width()/2)",
+                "=",
+                "CameraY(\"GUI\",0)-(BitmapGameOver.Height()/2)"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundOnChannel"
+              },
+              "parameters": [
+                "",
+                "Jonathan_So-Sunstrider-truncated.ogg",
+                "100",
+                "yes",
+                "80",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "Hide"
+              },
+              "parameters": [
+                "DebugGroup"
+              ]
+            },
+            {
+              "type": {
+                "value": "BitmapText::BitmapTextObject::SetOpacity"
+              },
+              "parameters": [
+                "BitmapGameOver",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "If the checkpoint has been reached, start the player at the checkpoint position."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "GameState.Checkpoint",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "HeroHitbox",
+                    "=",
+                    "Checkpoint.X()",
+                    "=",
+                    "Checkpoint.Y()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Fade Object management\nThis is to stretch the FadeObject to the full screen size and then center it into the middle of the GUI camera.\nSince this object is just a black square, resizing it via events lets it keep a much smaller asset size and not have to worry about memory limits.\nThis object is used whenever there is a need to fade out or in the screen, like for a GameOver or starting the level."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "=",
+                    "0",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "Resizable",
+                    "=",
+                    "CameraHeight(\"GUI\",0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "Resizable",
+                    "=",
+                    "CameraWidth(\"GUI\",0)"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "The main camera uses a large Camera \"room\" object, and some logic to follow the player in that room. Because the camera could be used in numerous levels, it is stored in an external event sheet.\nMore details are found in the event sheet."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "CameraManagement"
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Hero Events",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "The below event links the Finite State Machine (FSM) for our hero's movement.\nAll hero controls are done in these events, and not in the main event sheet, for many reasons:\n1. Incase we make more levels in the future, this avoids having to remake or copy the events.\n2. A finite state machine will help avoid major conflicts with competing controls.\n\nAdditionally, controls themselves are set up for both keyboard and gamepad. To allow for easier updating of controls, both the gamepad and keyboard conditions utilize global variables for their current settings."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "HeroFSM"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "StaminaManagement"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "HeroObjectManagement"
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "GUI Events",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "GUIManagement"
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Enemy Events",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "There are 3 different type of normal enemies included, that adhere to many of the standard enemy AI tropes found in games.\nThe wolf enemy is a Dasher, which is an enemy that will start running in the direction it is facing once the player is within range of it.\nThe skeleton enemy is a Patroller, which is an enemy that walks back and forth on a predetermined path, and turns around after colliding with a wall or platform edge.\nThe ghost is a delayed chase enemy, which is an enemy that directly chases the player while they are in range, with a small delay between each movement."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "DasherEnemy"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "PatrollerEnemy"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "DelayedChaseEnemy"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "EnemyCombatManagement"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Most Bosses are scene specific, and there is usually only one. With this in mind, the boss fight events are kept in the scene event sheet instead of as an external event.\nThe boss for the level has a very simple pattern, and only damages the player on contact.\nThe main goal is for the player to realize the boss is too large to jump over, and that dashing through the boss is required to survive.\nThe boss's possible locations are tracked via BossLocation objects. A single object is used for this with a \"Location\" instance variable. This allows for modification of the boss pattern without having to worry about manually tracking specific x/y locations."
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Boss Events",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Only start the boss fight logic if the BossFightStart variable is set to 1."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "BossStart",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "The BossPhase variable is used to act as a small state machine, to ensure the boss is only doing the desired events during that phase."
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Initial Boss Phase",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberObjectVariable"
+                              },
+                              "parameters": [
+                                "BossSkull",
+                                "BossPhase",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "actions": [],
+                          "events": [
+                            {
+                              "type": "BuiltinCommonInstructions::Comment",
+                              "color": {
+                                "b": 109,
+                                "g": 230,
+                                "r": 255,
+                                "textB": 0,
+                                "textG": 0,
+                                "textR": 0
+                              },
+                              "comment": "After the fight starts, the boss should wait a moment before the initial move."
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
+                                {
+                                  "type": {
+                                    "value": "BuiltinCommonInstructions::Once"
+                                  },
+                                  "parameters": []
+                                }
+                              ],
+                              "actions": [
+                                {
+                                  "type": {
+                                    "value": "UnPauseObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\""
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "ResetObjectTimer"
+                                  },
+                                  "parameters": [
+                                    "BossSkull",
+                                    "\"MoveTimer\""
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Comment",
+                              "color": {
+                                "b": 109,
+                                "g": 230,
+                                "r": 255,
+                                "textB": 0,
+                                "textG": 0,
+                                "textR": 0
+                              },
+                              "comment": "After the initial timer has passed, the boss moves to the 3rd position with a tween.\nBy checking for the Location variable of the BossLocation object, the tween targets that specific object."
+                            },
+                            {
+                              "type": "BuiltinCommonInstructions::Standard",
+                              "conditions": [
