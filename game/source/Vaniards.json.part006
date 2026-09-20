@@ -1,0 +1,1000 @@
+                            "y": 0
+                          },
+                          {
+                            "x": 104,
+                            "y": 0
+                          },
+                          {
+                            "x": 104,
+                            "y": 180
+                          },
+                          {
+                            "x": 0,
+                            "y": 180
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "Hero",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "heroFSM",
+              "type": "string",
+              "value": "Init"
+            },
+            {
+              "name": "heroHP",
+              "type": "number",
+              "value": 100
+            },
+            {
+              "name": "heroDMG",
+              "type": "number",
+              "value": 20
+            },
+            {
+              "name": "heroStam",
+              "type": "number",
+              "value": 100
+            },
+            {
+              "name": "heroMaxHP",
+              "type": "number",
+              "value": 100
+            },
+            {
+              "name": "heroMaxStam",
+              "type": "number",
+              "value": 100
+            },
+            {
+              "name": "hasJumped",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "hasAttacked",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "hasDashed",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "hitLocation",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "heroStamRegen",
+              "type": "number",
+              "value": 0.3
+            },
+            {
+              "folded": true,
+              "name": "DefaultJumpSpeed",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.16670000553131104,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Idle-1.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Idle-2.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Idle-3.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Idle-4.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Run",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.10000000149011612,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Run-1.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Run-2.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Run-3.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Run-4.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Run-5.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Run-6.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Attack",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08330000191926956,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Attack-1.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Attack-2.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Attack-3.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Attack-4.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Attack-5.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Attack-6.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Jump",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.10000000149011612,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Jump-1.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Jump-2.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Jump-3.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Jump-4.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
+                      ],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 148,
+                        "y": 56
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 182,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 56
+                          },
+                          {
+                            "x": 248,
+                            "y": 236
+                          },
+                          {
+                            "x": 182,
+                            "y": 236
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hit",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Hit-1.png",
+                      "points": [
+                        {
+                          "name": "AttackOrigin",
+                          "x": 240,
+                          "y": 112
+                        }
