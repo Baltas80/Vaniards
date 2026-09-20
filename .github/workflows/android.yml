@@ -84,7 +84,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p build/html5
-          ./gdevelop.AppImage --appimage-extract-and-run --no-sandbox --disable-update-check \
+          xvfb-run -a ./gdevelop.AppImage --appimage-extract-and-run --no-sandbox --disable-gpu --disable-update-check \
             --run-command EXPORT_HTML5_EXTERNAL "$PWD/game/Vaniards.json"
           test -f build/html5/index.html
           echo "HTML5 export completed."
