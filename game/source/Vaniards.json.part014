@@ -1,0 +1,1000 @@
+    {
+      "b": 0,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Credits",
+      "name": "Credits",
+      "r": 0,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": false,
+      "title": "",
+      "v": 0,
+      "uiSettings": {
+        "grid": false,
+        "gridB": 255,
+        "gridG": 180,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridR": 158,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "snap": true,
+        "windowMask": false,
+        "zoomFactor": 0.6199999999999997
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 621,
+          "layer": "",
+          "name": "Credits",
+          "persistentUuid": "da9f66dc-be72-4444-989e-4e4abffc43d8",
+          "width": 1202,
+          "x": 47,
+          "y": 51,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "name": "Credits",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "Huge thanks to 4ian, Bouh, Arthuro555, and all of the GDevelop \ncommunity over the years.\n\n- GUI Assets -\nHUD:  Adwitr on Itch.io / Mounir Tohami \nTitle Font: Sanguis - Jupiter Hadley\nGUI Font: Dogica Pixel - rmocci\n\n- World Art Assets -\nMap Tileset: Ansimuz\nPlayer Character: Ansimuz\nMonsters: Ansimuz\n\n- Sound Assets -\nMusic: Jonathan So\nSword Sound Effect: Iwan Gabovich\nOther Sounds: Created in GDevelop using JFXR\n\n- Game Design and Development - \nSilver-Streak\n\n\nPress the M key on the keyboard, the Y button on an Xbox Gamepad, or the Triangle on a Playstation Gamepad to return to the main menu.",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "center",
+            "wordWrap": true,
+            "verticalTextAlignment": "top"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "Credits"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Center the credits text."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCenter"
+              },
+              "parameters": [
+                "Credits",
+                "=",
+                "CameraX(\"\",0)",
+                "=",
+                "CameraY(\"\",0)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Events to return to the title screen."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "m"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Gamepads::C_Button_pressed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"Y\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Title\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Vaniards Localization",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarGlobalTxt"
+                  },
+                  "parameters": [
+                    "Language",
+                    "=",
+                    "\"en\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "Credits",
+                    "=",
+                    "\"Huge thanks to 4ian, Bouh, Arthuro555, and all of the GDevelop \\ncommunity over the years.\\n\\n- GUI Assets -\\nHUD:  Adwitr on Itch.io / Mounir Tohami \\nTitle Font: Sanguis - Jupiter Hadley\\nGUI Font: Dogica Pixel - rmocci\\n\\n- World Art Assets -\\nMap Tileset: Ansimuz\\nPlayer Character: Ansimuz\\nMonsters: Ansimuz\\n\\n- Sound Assets -\\nMusic: Jonathan So\\nSword Sound Effect: Iwan Gabovich\\nOther Sounds: Created in GDevelop using JFXR\\n\\n- Game Design and Development - \\nSilver-Streak\\n\\n\\nPress the M key on the keyboard, the Y button on an Xbox Gamepad, or the Triangle on a Playstation Gamepad to return to the main menu.\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarGlobalTxt"
+                  },
+                  "parameters": [
+                    "Language",
+                    "=",
+                    "\"es\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "Credits",
+                    "=",
+                    "\"Muchísimas gracias a 4ian, Bouh, Arthuro555 y a toda la comunidad de GDevelop a lo largo de los años.\\n\\n- Recursos de interfaz -\\nHUD: Adwitr on Itch.io / Mounir Tohami\\nFuente del título: Sanguis - Jupiter Hadley\\nFuente de interfaz: Dogica Pixel - rmocci\\n\\n- Recursos gráficos del mundo -\\nTileset del mapa: Ansimuz\\nPersonaje: Ansimuz\\nMonstruos: Ansimuz\\n\\n- Recursos de sonido -\\nMúsica: Jonathan So\\nEfecto de espada: Iwan Gabovich\\nOtros sonidos: creados en GDevelop con JFXR\\n\\n- Diseño y desarrollo -\\nSilver-Streak\\n\\n\\nPulsa M en el teclado, Y en un mando Xbox o Triángulo en un mando PlayStation para volver al menú principal.\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Vaniards Credits Recenter",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCenter"
+              },
+              "parameters": [
+                "Credits",
+                "=",
+                "CameraX(\"\",0)",
+                "=",
+                "CameraY(\"\",0)"
+              ]
+            }
+          ]
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 7346456,
+          "ambientLightColorR": 0,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": []
+    },
+    {
+      "b": 0,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "WinScreen",
+      "name": "WinScreen",
+      "r": 0,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 0,
+      "uiSettings": {
+        "grid": false,
+        "gridB": 255,
+        "gridG": 180,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridR": 158,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "snap": true,
+        "windowMask": false,
+        "zoomFactor": 0.7399999999999998
+      },
+      "objectsGroups": [
+        {
+          "name": "TextGroup",
+          "objects": [
+            {
+              "name": "Congrats"
+            },
+            {
+              "name": "WinTime"
+            },
+            {
+              "name": "NextSteps"
+            }
+          ]
+        }
+      ],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "Congrats",
+          "persistentUuid": "ad1b1070-c72e-4e43-99c6-ebeef384c5d7",
+          "width": 0,
+          "x": 265,
+          "y": 68,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 291,
+          "layer": "",
+          "name": "NextSteps",
+          "persistentUuid": "9c4d30d2-1a74-42cb-9881-686fde41bdb6",
+          "width": 1117,
+          "x": 94,
+          "y": 280,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "FadeObject",
+          "persistentUuid": "7a160984-98d0-4448-a8f2-3dff6dbc4c60",
+          "width": 0,
+          "x": -43,
+          "y": 61,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "name": "Congrats",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "CONGRATULATIONS!",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ff0000",
+            "bitmapFontResourceName": "sanguis80.fnt",
+            "textureAtlasResourceName": "sanguis80_0.png",
+            "align": "left",
+            "wordWrap": true,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "WinTime",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "You completed Vaniards in: ",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "left",
+            "wordWrap": true,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "NextSteps",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "Press M on the keyboard, Y on Xbox or Triangle on PlayStation to return to the main menu.",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "center",
+            "wordWrap": true,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "FadeObject",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "Fade",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Fade-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "Congrats"
+          },
+          {
+            "objectName": "WinTime"
+          },
+          {
+            "objectName": "NextSteps"
+          },
+          {
+            "objectName": "FadeObject"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "By having all of the text objects in a group, only one event is needed to center all of them."
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "TextGroup",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "TextGroup",
+                    "=",
+                    "CameraX(\"\",0)-(TextGroup.Width()/2)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Resize and position the fade object, then start the fade in."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "=",
+                    "0",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "Resizable",
+                    "=",
+                    "CameraHeight(\"\",0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "Resizable",
+                    "=",
+                    "CameraWidth(\"\",0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::AddObjectOpacityTween"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "Tween",
+                    "\"SceneFadeIn\"",
+                    "0",
+                    "\"linear\"",
+                    "500",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Group",
+              "name": "Language",
+              "source": "",
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarGlobalTxt"
+                      },
+                      "parameters": [
+                        "Language",
+                        "=",
+                        "\"en\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BitmapText::BitmapTextObject::SetText"
+                      },
+                      "parameters": [
+                        "Congrats",
+                        "=",
+                        "\"CONGRATULATIONS!\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BitmapText::BitmapTextObject::SetText"
+                      },
+                      "parameters": [
+                        "WinTime",
+                        "=",
+                        "\"You completed Vaniards in: \""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BitmapText::BitmapTextObject::SetText"
+                      },
+                      "parameters": [
+                        "NextSteps",
+                        "=",
+                        "\"Press M on the keyboard, Y on Xbox or Triangle on PlayStation to return to the main menu.\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "VarGlobalTxt"
+                      },
+                      "parameters": [
+                        "Language",
+                        "=",
+                        "\"es\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BitmapText::BitmapTextObject::SetText"
+                      },
+                      "parameters": [
+                        "Congrats",
+                        "=",
+                        "\"¡ENHORABUENA!\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BitmapText::BitmapTextObject::SetText"
+                      },
+                      "parameters": [
+                        "WinTime",
+                        "=",
+                        "\"Has completado Vaniards en: \""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BitmapText::BitmapTextObject::SetText"
+                      },
+                      "parameters": [
+                        "NextSteps",
+                        "=",
+                        "\"Pulsa M en el teclado, Y en Xbox o Triángulo en PlayStation para volver al menú principal.\""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Once the fade is completed, play the victory music."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Tween::Exists"
+              },
+              "parameters": [
+                "FadeObject",
+                "Tween",
+                "\"SceneFadeIn\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Tween::HasFinished"
+              },
+              "parameters": [
+                "FadeObject",
+                "Tween",
+                "\"SceneFadeIn\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PlaySoundOnChannel"
+              },
+              "parameters": [
+                "",
+                "Johnathan_So-Victory.ogg",
+                "80",
+                "",
+                "100",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Or"
+              },
+              "parameters": [],
+              "subInstructions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "m"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Gamepads::C_Button_pressed"
+                  },
+                  "parameters": [
+                    "",
+                    "1",
+                    "\"Y\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Title\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Vaniards Win Recenter",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "TextGroup",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetX"
+                  },
+                  "parameters": [
+                    "TextGroup",
+                    "=",
+                    "CameraX(\"\",0)-(TextGroup.Width()/2)"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
+    }
+  ],
+  "externalEvents": [
+    {
+      "associatedLayout": "Stage",
+      "name": "HeroFSM",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 0,
+            "g": 48,
+            "r": 138,
+            "textB": 255,
+            "textG": 255,
+            "textR": 255
+          },
+          "comment": "This external event sheet is the primary Finite State Machine (FSM) for the hero character.\nThis functions using an object variable on the Hero object, named heroFSM.\nThe main goal is to ensure that only the actions that *should* occur, *can* occur. \nExample: \n-The player has jump, attack, and dash buttons available to them. If the player is dashing, they should not be able to attack mid-dash. \n--Without a FSM, the attack events would then have to have extra conditions added to ensure it won't work while dashing. Then the same would need to be done for jump. As the hero also can't run while dashing, more conditions would need to be adde to the run events to avoid that there too. Every potential conflict will add more and more bloat to the events, and lead to potential logic or animation conflicts. \n--With a FSM, when the hero switches to the Dash State, the events simply do not set up any controls for jump, run, or attack, and they are ignored during the dash.\n\nLearn more about FSMs here: \nhttp://wiki.compilgames.net/doku.php/gdevelop5/tutorials/finite_state_machine\nhttps://gamedevelopment.tutsplus.com/tutorials/finite-state-machines-theory-and-implementation--gamedev-11867"
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Initialization",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "The initialization state occurs at the beginning of the scene just to ensure there's no oddness when the scene begins."
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "SceneJustBegins"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Link",
+                  "include": {
+                    "includeConfig": 0
+                  },
+                  "target": "HeroFSMInit"
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Cutscene",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "If the game is in Cutscene mode, the hero shouldn't be able to use its normal states."
+            },
