@@ -130,7 +130,22 @@ jobs:
           AAB=$(find platforms/android/app/build/outputs -type f -name '*.aab' | head -n 1 || true)
           if [ -n "$AAB" ]; then cp "$AAB" ../Vaniards-1.0.1-unsigned.aab; fi
 
-      - name: Upload Android artifacts
+      - name: Sign release AAB
+        if: ${{ env.ANDROID_KEYSTORE_BASE64 != '' && env.ANDROID_KEYSTORE_PASSWORD != '' && env.ANDROID_KEY_ALIAS != '' && env.ANDROID_KEY_PASSWORD != '' }}
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > upload-keystore.jks
+          jarsigner             -keystore upload-keystore.jks             -storepass "$ANDROID_KEYSTORE_PASSWORD"             -keypass "$ANDROID_KEY_PASSWORD"             -signedjar Vaniards-1.0.1.aab             Vaniards-1.0.1-unsigned.aab             "$ANDROID_KEY_ALIAS"
+          jarsigner -verify -strict Vaniards-1.0.1.aab
+          rm -f upload-keystore.jks
+
+      - name: Publish Android artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Vaniards-Android-1.0.1
@@ -138,3 +153,4 @@ jobs:
           path: |
             Vaniards-touch-1.0.1-debug.apk
             Vaniards-1.0.1-unsigned.aab
+            Vaniards-1.0.1.aab
