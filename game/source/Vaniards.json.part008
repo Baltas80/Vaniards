@@ -1,0 +1,1000 @@
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "EnemyDeathFire-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "EnemyDeathFire-3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "EnemyDeathFire-4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "EnemyDeathFire-5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "Ghost",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "folded": true,
+              "name": "Attack",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "enemyHP",
+              "type": "number",
+              "value": 20
+            },
+            {
+              "name": "enemyDMG",
+              "type": "number",
+              "value": 10
+            },
+            {
+              "name": "TargetAngle",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "GhostIdle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.16670000553131104,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostIdle-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostIdle-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostIdle-3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostIdle-4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostIdle-5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostIdle-6.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostIdle-7.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Appear",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08330000191926956,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Appear-1-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Appear-2-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Appear-3-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Appear-4-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Appear-5-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Appear-6-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "GhostAttack",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.16670000553131104,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostAttack-1-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 176,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostAttack-2-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 176,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostAttack-3-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 176,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostAttack-4-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 176,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostAttack-5-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 176,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostAttack-6-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 176,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "GhostAttack-7-0.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 80,
+                        "y": 74
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 80,
+                            "y": 74
+                          },
+                          {
+                            "x": 178,
+                            "y": 74
+                          },
+                          {
+                            "x": 176,
+                            "y": 240
+                          },
+                          {
+                            "x": 80,
+                            "y": 240
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "Skeleton",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "folded": true,
+              "name": "HitStun",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "Direction",
+              "type": "string",
+              "value": "Left"
+            },
+            {
+              "name": "enemyHP",
+              "type": "number",
+              "value": 40
+            },
+            {
+              "name": "enemyDMG",
+              "type": "number",
+              "value": 10
+            }
+          ],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "PlatformerObject",
+              "type": "PlatformBehavior::PlatformerObjectBehavior",
+              "acceleration": 15000,
+              "canGrabPlatforms": false,
+              "deceleration": 15000,
+              "gravity": 1000,
+              "ignoreDefaultControls": true,
+              "jumpSpeed": 600,
+              "jumpSustainTime": 0.2,
+              "ladderClimbingSpeed": 150,
+              "maxFallingSpeed": 700,
+              "maxSpeed": 150,
+              "roundCoordinates": true,
+              "slopeMaxAngle": 60,
+              "xGrabTolerance": 10,
+              "yGrabOffset": 0
+            }
+          ],
+          "animations": [
+            {
+              "name": "Walking",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.16670000553131104,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Walking-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 48,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 208
+                          },
+                          {
+                            "x": 48,
+                            "y": 208
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Walking-2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 48,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 208
+                          },
+                          {
+                            "x": 48,
+                            "y": 208
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Walking-3.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 48,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 208
+                          },
+                          {
+                            "x": 48,
+                            "y": 208
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Walking-4.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 48,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 208
+                          },
+                          {
+                            "x": 48,
+                            "y": 208
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Walking-5.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 48,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 36
+                          },
+                          {
+                            "x": 142,
+                            "y": 208
+                          },
+                          {
+                            "x": 48,
+                            "y": 208
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Walking-6.png",
+                      "points": [],
+                      "originPoint": {
