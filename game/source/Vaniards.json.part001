@@ -1,0 +1,1000 @@
+{
+  "firstLayout": "",
+  "gdVersion": {
+    "build": 282,
+    "major": 5,
+    "minor": 6,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "antialiasingMode": "MSAA",
+    "antialisingEnabledOnMobile": false,
+    "folderProject": false,
+    "orientation": "landscape",
+    "packageName": "com.baltas80.vaniards",
+    "pixelsRounding": false,
+    "projectUuid": "a55a2936-bc10-4c5b-8130-09df35e1aa70",
+    "scaleMode": "nearest",
+    "sizeOnStartupMode": "",
+    "templateSlug": "not-a-vania",
+    "version": "1.0.1",
+    "name": "Vaniards",
+    "description": "Vaniards is a 2D action-platformer with combat, enemies, checkpoints and boss encounters.",
+    "author": "Baltas80",
+    "windowWidth": 1280,
+    "windowHeight": 720,
+    "latestCompilationDirectory": "",
+    "maxFPS": 0,
+    "minFPS": 60,
+    "verticalSync": false,
+    "platformSpecificAssets": {
+      "android-icon-144": "android-icon-144.png",
+      "android-icon-192": "android-icon-192.png",
+      "android-icon-36": "android-icon-36.png",
+      "android-icon-48": "android-icon-48.png",
+      "android-icon-72": "android-icon-72.png",
+      "android-icon-96": "android-icon-96.png",
+      "desktop-icon-512": "desktop-icon-512.png",
+      "ios-icon-100": "ios-icon-100.png",
+      "ios-icon-1024": "ios-icon-1024.png",
+      "ios-icon-114": "ios-icon-114.png",
+      "ios-icon-120": "ios-icon-120.png",
+      "ios-icon-144": "ios-icon-144.png",
+      "ios-icon-152": "ios-icon-152.png",
+      "ios-icon-167": "ios-icon-167.png",
+      "ios-icon-180": "ios-icon-180.png",
+      "ios-icon-20": "ios-icon-20.png",
+      "ios-icon-29": "ios-icon-29.png",
+      "ios-icon-40": "ios-icon-40.png",
+      "ios-icon-50": "ios-icon-50.png",
+      "ios-icon-57": "ios-icon-57.png",
+      "ios-icon-58": "ios-icon-58.png",
+      "ios-icon-60": "ios-icon-60.png",
+      "ios-icon-72": "ios-icon-72.png",
+      "ios-icon-76": "ios-icon-76.png",
+      "ios-icon-80": "ios-icon-80.png",
+      "ios-icon-87": "ios-icon-87.png"
+    },
+    "loadingScreen": {
+      "backgroundColor": 0,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0.2,
+      "minDuration": 1.5,
+      "progressBarColor": 16777215,
+      "progressBarHeight": 20,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 40,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": true,
+      "showProgressBar": true
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": true
+    },
+    "authorIds": [],
+    "authorUsernames": [],
+    "categories": [],
+    "playableDevices": [
+      "mobile"
+    ],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "file": "assets/Platform-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Platform-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Idle-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Idle-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Idle-2.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Idle-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Idle-3.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Idle-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Idle-4.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/NewObject-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewObject-1-0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Run-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Run-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Run-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Run-2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Run-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Run-3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Run-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Run-4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Run-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Run-5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Run-6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Run-6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Attack-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Attack-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Attack-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Attack-2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Attack-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Attack-3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Attack-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Attack-4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Attack-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Attack-5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Attack-6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Attack-6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Jump-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Jump-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Jump-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Jump-2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Jump-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Jump-3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Jump-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Jump-4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Hit-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Hit-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/TestEnemy-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "TestEnemy-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Jonathan_So-MissionOver.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Jonathan_So-MissionOver.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Jonathan_So-FallenInBattle.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Jonathan_So-FallenInBattle.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Fade-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Fade-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Sanguis.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "Sanguis.ttf",
+        "userAdded": true
+      },
+      {
+        "file": "assets/CameraRoom-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "CameraRoom-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/GUIMain-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GUIMain-1-0.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/HealthPanel-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "HealthPanel-1-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/HealthBar-1-1-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "HealthBar-1-1-1-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/StaminaBar-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "StaminaBar-1-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/StaminaPanel-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "StaminaPanel-1-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/dogicapixel.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "dogicapixel.ttf",
+        "userAdded": true
+      },
+      {
+        "file": "assets/HeroAttackHitbox-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "HeroAttackHitbox-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/tiles.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "tiles.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/town-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "town-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/clouds-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "clouds-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "disablePreload": false,
+        "file": "assets/Level1.json",
+        "kind": "json",
+        "metadata": "",
+        "name": "Level1.json",
+        "userAdded": true
+      },
+      {
+        "file": "assets/BossRoomIndicator-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "BossRoomIndicator-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/dogicapixel24.fnt",
+        "kind": "bitmapFont",
+        "metadata": "",
+        "name": "dogicapixel24.fnt",
+        "userAdded": false
+      },
+      {
+        "file": "assets/dogicapixel24_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "dogicapixel24_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sanguis48.fnt",
+        "kind": "bitmapFont",
+        "metadata": "",
+        "name": "sanguis48.fnt",
+        "userAdded": false
+      },
+      {
+        "file": "assets/sanguis48_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sanguis48_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sanguis80.fnt",
+        "kind": "bitmapFont",
+        "metadata": "",
+        "name": "sanguis80.fnt",
+        "userAdded": false
+      },
+      {
+        "file": "assets/sanguis80_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sanguis80_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/NewFile-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "NewFile-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Selector-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Selector-1-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/BG1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "BG1-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/CutsceneCamera-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "CutsceneCamera-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Barrier-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Barrier-1-0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/DogicaTake4.fnt",
+        "kind": "bitmapFont",
+        "metadata": "",
+        "name": "DogicaTake4.fnt",
+        "userAdded": false
+      },
+      {
+        "file": "assets/DogicaTake4_0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "DogicaTake4_0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Jonathan_So-ForMe-truncade.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Jonathan_So-ForMe-truncade.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/MenuMove.wav",
+        "kind": "audio",
+        "metadata": "{\"jfxr\":{\"data\":\"{\\\"_version\\\":1,\\\"_name\\\":\\\"Blip/select 31\\\",\\\"_locked\\\":[],\\\"sampleRate\\\":44100,\\\"attack\\\":0,\\\"sustain\\\":0.04,\\\"sustainPunch\\\":0,\\\"decay\\\":0.01,\\\"tremoloDepth\\\":0,\\\"tremoloFrequency\\\":10,\\\"frequency\\\":300,\\\"frequencySweep\\\":0,\\\"frequencyDeltaSweep\\\":0,\\\"repeatFrequency\\\":0,\\\"frequencyJump1Onset\\\":33,\\\"frequencyJump1Amount\\\":0,\\\"frequencyJump2Onset\\\":66,\\\"frequencyJump2Amount\\\":0,\\\"harmonics\\\":0,\\\"harmonicsFalloff\\\":0.3,\\\"waveform\\\":\\\"whistle\\\",\\\"interpolateNoise\\\":true,\\\"vibratoDepth\\\":0,\\\"vibratoFrequency\\\":10,\\\"squareDuty\\\":65,\\\"squareDutySweep\\\":0,\\\"flangerOffset\\\":0,\\\"flangerOffsetSweep\\\":0,\\\"bitCrush\\\":16,\\\"bitCrushSweep\\\":0,\\\"lowPassCutoff\\\":22050,\\\"lowPassCutoffSweep\\\":0,\\\"highPassCutoff\\\":0,\\\"highPassCutoffSweep\\\":0,\\\"compression\\\":1,\\\"normalization\\\":true,\\\"amplification\\\":30}\",\"name\":\"MenuMove\"}}",
+        "name": "MenuMove.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Select.wav",
+        "kind": "audio",
+        "metadata": "{\"jfxr\":{\"data\":\"{\\\"_version\\\":1,\\\"_name\\\":\\\"Blip/select 49\\\",\\\"_locked\\\":[],\\\"sampleRate\\\":44100,\\\"attack\\\":0,\\\"sustain\\\":0.04092945208729559,\\\"sustainPunch\\\":0,\\\"decay\\\":0.5340063743631778,\\\"tremoloDepth\\\":0,\\\"tremoloFrequency\\\":10,\\\"frequency\\\":198.49096204322166,\\\"frequencySweep\\\":0,\\\"frequencyDeltaSweep\\\":0,\\\"repeatFrequency\\\":0,\\\"frequencyJump1Onset\\\":33,\\\"frequencyJump1Amount\\\":0,\\\"frequencyJump2Onset\\\":66,\\\"frequencyJump2Amount\\\":0,\\\"harmonics\\\":0,\\\"harmonicsFalloff\\\":0.5,\\\"waveform\\\":\\\"whistle\\\",\\\"interpolateNoise\\\":true,\\\"vibratoDepth\\\":0.10861971659449754,\\\"vibratoFrequency\\\":10,\\\"squareDuty\\\":60,\\\"squareDutySweep\\\":0,\\\"flangerOffset\\\":0,\\\"flangerOffsetSweep\\\":0,\\\"bitCrush\\\":16,\\\"bitCrushSweep\\\":0,\\\"lowPassCutoff\\\":22050,\\\"lowPassCutoffSweep\\\":0,\\\"highPassCutoff\\\":0,\\\"highPassCutoffSweep\\\":0,\\\"compression\\\":1,\\\"normalization\\\":true,\\\"amplification\\\":50}\",\"name\":\"Select\"}}",
+        "name": "Select.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Walking-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Walking-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Walking-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Walking-2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Walking-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Walking-3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Walking-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Walking-4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Walking-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Walking-5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Walking-6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Walking-6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Walking-7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Walking-7.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Walking-8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Walking-8.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Right-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Right-1-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Right-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Right-1-0.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/EnemyDeathFire-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "EnemyDeathFire-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/EnemyDeathFire-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "EnemyDeathFire-2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/EnemyDeathFire-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "EnemyDeathFire-3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/EnemyDeathFire-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "EnemyDeathFire-4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/EnemyDeathFire-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "EnemyDeathFire-5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostIdle-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostIdle-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostIdle-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostIdle-2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostIdle-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostIdle-3.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostIdle-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostIdle-4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostIdle-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostIdle-5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostIdle-6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostIdle-6.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostIdle-7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostIdle-7.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostAttack-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostAttack-1-0.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/GhostAttack-2-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostAttack-2-0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostAttack-3-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostAttack-3-0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostAttack-4-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostAttack-4-0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostAttack-5-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostAttack-5-0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostAttack-6-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostAttack-6-0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/GhostAttack-7-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "GhostAttack-7-0.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Appear-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Appear-1-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Appear-2-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Appear-2-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Appear-3-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Appear-3-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Appear-4-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Appear-4-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Appear-5-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Appear-5-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Appear-6-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Appear-6-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Jonathan_So-Sunstrider-truncated.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Jonathan_So-Sunstrider-truncated.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Dasher-4-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Dasher-4-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Dasher-3-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Dasher-3-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Dasher-2-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Dasher-2-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Dasher-1-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Dasher-1-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/SkullNoFire-1-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullNoFire-1-0.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/SkullNoFire-2-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullNoFire-2-0.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/SkullNoFire-3-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullNoFire-3-0.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/SkullNoFire-4-0.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullNoFire-4-0.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/BossLocation-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "BossLocation-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Checkpoint-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Checkpoint-1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/SkullFire-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullFire-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/SkullFire-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullFire-2.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/SkullFire-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullFire-3.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/SkullFire-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullFire-4.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/SkullFire-5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullFire-5.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/SkullFire-6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullFire-6.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/SkullFire-7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullFire-7.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/SkullFire-8.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "SkullFire-8.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Johnathan_So-MechaCollection.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Johnathan_So-MechaCollection.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Pit-1.png",
