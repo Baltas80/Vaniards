@@ -1,0 +1,1000 @@
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "FadeObject",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "animations": [
+            {
+              "name": "Fade",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "Fade-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "KeyboardControls",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "Keyboard:\nMenu:\nMove - W or S\nSelect - K\n\nIn Game: \nMove - A or D\nJump - J\nAttack - K\nDash - O",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "left",
+            "wordWrap": true,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "GamepadControls",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "Gamepad:\nMenu:\nMove - D-Pad\nSelect - Cross or A\n\nIn Game:\nMove: D-Pad or Left Stick\nJump: Cross or A\nAttack: Square or X\nDash: Circle or B",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "right",
+            "wordWrap": true,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "JumpAttack",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "(There is no jump attack)",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "left",
+            "wordWrap": true,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bottomMargin": 24,
+          "height": 90,
+          "leftMargin": 24,
+          "name": "LanguageEN",
+          "rightMargin": 24,
+          "texture": "Selector-1-1.png",
+          "tiled": true,
+          "topMargin": 24,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 90,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "bottomMargin": 24,
+          "height": 90,
+          "leftMargin": 24,
+          "name": "LanguageES",
+          "rightMargin": 24,
+          "texture": "Selector-1-1.png",
+          "tiled": true,
+          "topMargin": 24,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 90,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "name": "LanguageENLabel",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "EN",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 18,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "center",
+            "wordWrap": false,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "LanguageESLabel",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "ES",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 18,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "center",
+            "wordWrap": false,
+            "verticalTextAlignment": "top"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "BitmapTitle"
+          },
+          {
+            "objectName": "BitmapMenuExit"
+          },
+          {
+            "objectName": "BitmapMenuCredits"
+          },
+          {
+            "objectName": "BitmapMenuStart"
+          },
+          {
+            "objectName": "MenuBorder"
+          },
+          {
+            "objectName": "MenuSelector"
+          },
+          {
+            "objectName": "TitleBG1"
+          },
+          {
+            "objectName": "FadeObject"
+          },
+          {
+            "objectName": "KeyboardControls"
+          },
+          {
+            "objectName": "GamepadControls"
+          },
+          {
+            "objectName": "JumpAttack"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 51,
+            "g": 107,
+            "r": 250,
+            "textB": 255,
+            "textG": 255,
+            "textR": 255
+          },
+          "comment": "This project is meant as a game example or template for a more advanced platformer. This is in the style of older castlevania entries, such as Castlevania 1 or 3.\nThere are numerous advanced GDevelop concepts in this project, such as finite state machines (FSMs), tweens, bitmap fonts and bitmap text objects, tilemaps, external event sheets, declaring variables via events, and object variables. \n\nBefore working with this project, it is STRONGLY recommended that you review the following:\nAt least the first four tutorials on the GDevelop Wiki: http://wiki.compilgames.net/doku.php/gdevelop5/tutorials. This example uses concepts from EACH of those tutorials and it is important to understand those concepts before trying to adapt these ideas.\nThe finite state machine tutorial at: http://wiki.compilgames.net/doku.php/gdevelop5/tutorials/finite_state_machine"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "The following events help with some of the aesthetics of the title screen by centering the title screen and menu item text on the X axis.\nThe Menu Border object is then centered based off the middle menu item.\nFinally, the Menu Selector object is centered and placed over the Start Game object.\nWe also use this event to play the title music."
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SceneJustBegins"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "MenuTextItem",
+                "=",
+                "SceneWindowWidth()/2"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "BitmapTitle",
+                "=",
+                "SceneWindowWidth()/2"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetXY"
+              },
+              "parameters": [
+                "MenuBorder",
+                "=",
+                "BitmapMenuStart.CenterX() - (MenuBorder.Width() / 2)",
+                "=",
+                "BitmapMenuCredits.CenterY()-(MenuBorder.Height()/2)"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetXY"
+              },
+              "parameters": [
+                "MenuSelector",
+                "=",
+                "BitmapMenuStart.CenterX()-(MenuSelector.Width()/2)",
+                "=",
+                "BitmapMenuStart.CenterY()-(MenuSelector.Height()/2)"
+              ]
+            },
+            {
+              "type": {
+                "value": "PlaySoundOnChannel"
+              },
+              "parameters": [
+                "",
+                "Jonathan_So-ForMe-truncade.ogg",
+                "100",
+                "yes",
+                "100",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetY"
+              },
+              "parameters": [
+                "GamepadControls",
+                "=",
+                "KeyboardControls.Y()"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetCenterX"
+              },
+              "parameters": [
+                "JumpAttack",
+                "=",
+                "SceneWindowWidth()/2"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Opacity"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "=",
+                    "0",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetWidth"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "Resizable",
+                    "=",
+                    "CameraWidth(\"\",0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResizableCapability::ResizableBehavior::SetHeight"
+                  },
+                  "parameters": [
+                    "FadeObject",
+                    "Resizable",
+                    "=",
+                    "CameraHeight(\"\",0)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GameState.Checkpoint",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "GameState.Lives",
+                    "=",
+                    "3"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Menu Events",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Movement Events",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "To ensure that menu selector only moves once when a movement key is pressed, a variable is used to restrict the ability to move at all after moving once. \nThis variable needs to be switched back once all movement buttons are not pressed, and this is accomplished by checking that it is currently restricted, then checking that no buttons are pressed, then switching it back."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectorButtonsReleased",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Gamepads::C_Button_pressed"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "gamepadUp",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Gamepads::C_Button_pressed"
+                      },
+                      "parameters": [
+                        "",
+                        "1",
+                        "gamepadDown",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "keyboardUp"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "KeyFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "keyboardDown"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "SelectorButtonsReleased",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "The events shouldn't occur unless the selector has been released since last press AND the fade out hasn't started."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectorButtonsReleased",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Opacity"
+                      },
+                      "parameters": [
+                        "FadeObject",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Move the Selector Up or Down based off the gamepad button or keyboard key pressed.\nTo select the correct menu item to move to, the Up or Down variables are compared to the MenuTextItem group to find the matching Item.\nThe selector is then moved to the Y position of the correct MenuTextItem, -16 pixels to center the selector."
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Or"
+                          },
+                          "parameters": [],
+                          "subInstructions": [
+                            {
+                              "type": {
+                                "value": "Gamepads::C_Button_pressed"
+                              },
+                              "parameters": [
+                                "",
+                                "1",
+                                "gamepadUp",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "KeyFromTextPressed"
+                              },
+                              "parameters": [
+                                "",
+                                "keyboardUp"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "StringObjectVariable"
+                          },
+                          "parameters": [
+                            "MenuTextItem",
+                            "ID",
+                            "=",
+                            "CurrentMenuItem.Up"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetY"
+                          },
+                          "parameters": [
+                            "MenuSelector",
+                            "=",
+                            "MenuTextItem.Y()-16"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "SelectorButtonsReleased",
+                            "=",
+                            "0"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PlaySoundOnChannel"
+                          },
+                          "parameters": [
+                            "",
+                            "MenuMove.wav",
+                            "1",
+                            "",
+                            "60",
+                            "1"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Or"
+                          },
+                          "parameters": [],
+                          "subInstructions": [
+                            {
+                              "type": {
+                                "value": "Gamepads::C_Button_pressed"
+                              },
+                              "parameters": [
+                                "",
+                                "1",
+                                "gamepadDown",
+                                ""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "KeyFromTextPressed"
+                              },
+                              "parameters": [
+                                "",
+                                "keyboardDown"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "StringObjectVariable"
+                          },
+                          "parameters": [
+                            "MenuTextItem",
+                            "ID",
+                            "=",
+                            "CurrentMenuItem.Down"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetY"
+                          },
+                          "parameters": [
+                            "MenuSelector",
+                            "=",
+                            "MenuTextItem.Y()-16"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "SelectorButtonsReleased",
+                            "=",
+                            "0"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PlaySoundOnChannel"
+                          },
+                          "parameters": [
+                            "",
+                            "MenuMove.wav",
+                            "1",
+                            "",
+                            "60",
+                            "1"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Once the selector is not moving, and the movement buttons are released, the scene variables tracking the current ID and possible movement IDs are updated."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectorButtonsReleased",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "CollisionNP"
+                      },
+                      "parameters": [
+                        "MenuSelector",
+                        "MenuTextItem",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "CurrentMenuItem.ID",
+                        "=",
+                        "MenuTextItem.ID"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "CurrentMenuItem.Up",
+                        "=",
+                        "MenuTextItem.Up"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "CurrentMenuItem.Down",
+                        "=",
+                        "MenuTextItem.Down"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Selection Events",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "As the screen should fade out once an object is selected, these events check that the movement has been completed, then starts the opacity tween of the Fade Object.\nAlso play the select sound once."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "SelectorButtonsReleased",
+                        "=",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Opacity"
+                      },
+                      "parameters": [
+                        "FadeObject",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "value": "Gamepads::C_Button_pressed"
+                          },
+                          "parameters": [
+                            "",
+                            "1",
+                            "gamepadJump",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "KeyFromTextPressed"
+                          },
+                          "parameters": [
+                            "",
+                            "keyboardAttack"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::AddObjectOpacityTween"
+                      },
+                      "parameters": [
+                        "FadeObject",
+                        "Tween",
+                        "\"FadeOut\"",
+                        "255",
+                        "\"linear\"",
+                        "500",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PlaySoundOnChannel"
+                      },
+                      "parameters": [
+                        "",
+                        "Select.wav",
+                        "1",
+                        "",
+                        "50",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Once the fade out has finished, collision is tested between the selector and Menu Text Item, to find out which action is currently selected.\nThe action listed is then used to decide which scene to change to."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Tween::HasFinished"
+                      },
+                      "parameters": [
+                        "FadeObject",
+                        "Tween",
+                        "\"FadeOut\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "CollisionNP"
+                      },
+                      "parameters": [
+                        "MenuSelector",
+                        "MenuTextItem",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringObjectVariable"
+                          },
+                          "parameters": [
+                            "MenuTextItem",
+                            "Action",
+                            "=",
+                            "\"Start\""
