@@ -62,4 +62,6 @@ Vaniards está diseñado para jugar en horizontal en dispositivos Android.
 
 ## Metadata note
 
-The wording above is factual and avoids references to other games or brands. Google Play currently limits the title to 30 characters, the short description to 80 characters and the full description to 4,000 characters. citeturn207025search0turn207025search1
+The wording above is factual and avoids references to other games or brands. Google Play currently limits the title to 30 characters, the short description to 80 characters and the full description to 4,000 characters.
+
+Official guidance: https://support.google.com/googleplay/android-developer/
