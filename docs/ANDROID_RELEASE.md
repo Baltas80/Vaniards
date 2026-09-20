@@ -30,9 +30,9 @@
 
 ## Google Play target
 
-As of 31 August 2026, new apps and updates submitted to Google Play must target **Android 16 / API 36 or higher**. citeturn992316search0turn992316search2
+From 31 August 2026, new apps and updates submitted to Google Play must target **Android 16 / API 36 or higher**.
 
-The final build therefore needs a GDevelop Android export toolchain that produces an APK/AAB with target API 36+.
+Official requirement: https://developer.android.com/google/play/requirements/target-sdk
 
 ## Release artifact
 
@@ -50,14 +50,22 @@ The final build therefore needs a GDevelop Android export toolchain that produce
 - [ ] Screenshots taken from the real Android build
 - [ ] Content rating
 - [ ] Data safety declaration
-- [ ] Privacy policy URL where applicable
+- [ ] Privacy policy URL
 
-Google Play's current listing limits are 30 characters for the app title, 80 for the short description and 4,000 for the full description. citeturn207025search1turn207025search4
+Google Play's current listing limits are 30 characters for the app title, 80 characters for the short description and 4,000 characters for the full description.
+
+Official metadata guidance: https://support.google.com/googleplay/android-developer/
 
 ## Personal developer account testing
 
-For personal developer accounts created after 13 November 2023, Google currently requires a closed test with at least 12 opted-in testers continuously for 14 days before production access can be requested. citeturn352291search3turn352291search6
+For personal developer accounts created after 13 November 2023, Google currently requires a closed test with at least 12 opted-in testers continuously for 14 days before production access can be requested.
 
-## Current APK
+Official guidance: https://support.google.com/googleplay/android-developer/answer/14151465?hl=es
 
-The repository's existing APK is a reference/test build. It should not be treated as the final Play Store artifact until the updated source has been exported, signed and tested on Android hardware.
+## Privacy policy
+
+Google Play requires a privacy policy for apps, including apps that do not access personal or sensitive user data. The policy must be available at an active public URL and must also be accessible from the app where applicable.
+
+Official guidance: https://support.google.com/googleplay/android-developer/answer/10144311?hl=es
+
+A web copy is stored at `docs/privacy-policy.html`. It can be served from a public web host for the Play Console URL.
