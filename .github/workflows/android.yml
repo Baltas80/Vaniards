@@ -1,0 +1,138 @@
+name: Vaniards Android Build
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android 36 SDK
+        shell: bash
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Assemble GDevelop project
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/source game
+          cat game/source/Vaniards.json.part*.??? 2>/dev/null > game/Vaniards.json || true
+          if [ ! -s game/Vaniards.json ]; then
+            cat game/source/Vaniards.json.part* > game/Vaniards.json
+          fi
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("game/Vaniards.json")
+          data = json.loads(p.read_text(encoding="utf-8"))
+          data.setdefault("properties", {})["latestCompilationDirectory"] = str(Path("build/html5").resolve())
+          p.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+          print("Project JSON valid:", len(p.read_text(encoding="utf-8")), "bytes")
+          PY
+
+      - name: Recover game assets from reference APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p game/assets .apk
+          unzip -q "Vaniards - Copy-1_0_1.apk" 'assets/www/*' -d .apk
+          find .apk/assets/www -maxdepth 1 -type f \
+            \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.ogg' -o -name '*.wav' -o -name '*.ttf' -o -name '*.fnt' -o -name '*.json' \) \
+            -exec cp -f {} game/assets/ \;
+          test -f game/assets/Level1.json
+          echo "Recovered assets: $(find game/assets -maxdepth 1 -type f | wc -l)"
+
+      - name: Download GDevelop 5.6.282
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 -o gdevelop.AppImage \
+            "https://github.com/4ian/GDevelop/releases/download/v5.6.282/GDevelop-5-5.6.282.AppImage"
+          chmod +x gdevelop.AppImage
+
+      - name: Export GDevelop HTML5
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/html5
+          ./gdevelop.AppImage --appimage-extract-and-run --no-sandbox --disable-update-check \
+            --run-command EXPORT_HTML5_EXTERNAL "$PWD/game/Vaniards.json"
+          test -f build/html5/index.html
+          echo "HTML5 export completed."
+
+      - name: Prepare Cordova Android shell
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --global cordova@13.0.0
+          cordova create android-build com.baltas80.vaniards Vaniards
+          cp -a build/html5/. android-build/www/
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("android-build/config.xml")
+          s = p.read_text(encoding="utf-8")
+          s = s.replace("</widget>", '''  <preference name="Orientation" value="landscape" />
+            <preference name="Fullscreen" value="true" />
+            <preference name="android-minSdkVersion" value="23" />
+            <preference name="android-targetSdkVersion" value="36" />
+            <preference name="android-compileSdkVersion" value="36" />
+          </widget>''')
+          p.write_text(s, encoding="utf-8")
+          PY
+          cd android-build
+          cordova platform add android@15.1.0
+          cordova requirements
+
+      - name: Build tactile APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd android-build
+          cordova build android --debug
+          test -f platforms/android/app/build/outputs/apk/debug/app-debug.apk
+          cp platforms/android/app/build/outputs/apk/debug/app-debug.apk ../Vaniards-touch-1.0.1-debug.apk
+
+      - name: Build unsigned release AAB
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd android-build
+          cordova build android --release || true
+          find platforms/android/app/build/outputs -type f \( -name '*.aab' -o -name '*.apk' \) -print || true
+          AAB=$(find platforms/android/app/build/outputs -type f -name '*.aab' | head -n 1 || true)
+          if [ -n "$AAB" ]; then cp "$AAB" ../Vaniards-1.0.1-unsigned.aab; fi
+
+      - name: Upload Android artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Vaniards-Android-1.0.1
+          if-no-files-found: error
+          path: |
+            Vaniards-touch-1.0.1-debug.apk
+            Vaniards-1.0.1-unsigned.aab
