@@ -1,10 +1,14 @@
 # Vaniards — third-party asset notes
 
-The upstream GDevelop Examples repository states that its examples are MIT licensed unless specified otherwise. citeturn412765search0
+The upstream GDevelop Examples repository states that its examples are MIT licensed unless specified otherwise.
+
+Repository: https://github.com/GDevelopApp/GDevelop-examples
 
 The original Not-A-Vania author documented these asset sources in the GDevelop forum:
 - Gothicvania art by Ansimuz: described there as CC0 / free for use.
-- Game Creator Pack music by Jonathan So: described there as CC0 / free for use. citeturn482632search3
+- Game Creator Pack music by Jonathan So: described there as CC0 / free for use.
+
+Source discussion: https://forum.gdevelop.io/
 
 The current project credits additional third-party assets and creators, including:
 - HUD: Adwitr on Itch.io / Mounir Tohami
