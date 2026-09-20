@@ -1,0 +1,1000 @@
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Stage\"",
+                            "yes"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringObjectVariable"
+                          },
+                          "parameters": [
+                            "MenuTextItem",
+                            "Action",
+                            "=",
+                            "\"Credits\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Credits\"",
+                            "yes"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringObjectVariable"
+                          },
+                          "parameters": [
+                            "MenuTextItem",
+                            "Action",
+                            "=",
+                            "\"Exit\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Quit"
+                          },
+                          "parameters": [
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Vaniards Localization",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "LanguageEN",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "Language",
+                    "=",
+                    "\"en\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "LanguageES",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "Language",
+                    "=",
+                    "\"es\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarGlobalTxt"
+                  },
+                  "parameters": [
+                    "Language",
+                    "=",
+                    "\"en\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "BitmapMenuStart",
+                    "=",
+                    "\"START GAME\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "BitmapMenuCredits",
+                    "=",
+                    "\"CREDITS\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "BitmapMenuExit",
+                    "=",
+                    "\"EXIT GAME\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "KeyboardControls",
+                    "=",
+                    "\"Keyboard:\\nMenu:\\nMove - W or S\\nSelect - K\\n\\nIn Game: \\nMove - A or D\\nJump - J\\nAttack - K\\nDash - O\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "GamepadControls",
+                    "=",
+                    "\"Gamepad:\\nMenu:\\nMove - D-Pad\\nSelect - Cross or A\\n\\nIn Game:\\nMove: D-Pad or Left Stick\\nJump: Cross or A\\nAttack: Square or X\\nDash: Circle or B\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "JumpAttack",
+                    "=",
+                    "\"(There is no jump attack)\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "LanguageENLabel",
+                    "=",
+                    "\"EN\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "LanguageESLabel",
+                    "=",
+                    "\"ES\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "VarGlobalTxt"
+                  },
+                  "parameters": [
+                    "Language",
+                    "=",
+                    "\"es\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "BitmapMenuStart",
+                    "=",
+                    "\"JUGAR\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "BitmapMenuCredits",
+                    "=",
+                    "\"CRÉDITOS\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "BitmapMenuExit",
+                    "=",
+                    "\"SALIR\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "KeyboardControls",
+                    "=",
+                    "\"Teclado:\\nMenú:\\nMover - W / S\\nSeleccionar - K\\n\\nEn juego:\\nMover - A / D\\nSaltar - J\\nAtacar - K\\nDash - O\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "GamepadControls",
+                    "=",
+                    "\"Mando:\\nMenú:\\nMover - Cruceta\\nSeleccionar - A\\n\\nEn juego:\\nMover - Cruceta / stick izquierdo\\nSaltar - A\\nAtacar - X\\nDash - B\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "JumpAttack",
+                    "=",
+                    "\"(No hay ataque en salto)\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "LanguageENLabel",
+                    "=",
+                    "\"EN\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BitmapText::BitmapTextObject::SetText"
+                  },
+                  "parameters": [
+                    "LanguageESLabel",
+                    "=",
+                    "\"ES\""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "g": 176,
+          "r": 74,
+          "creationTime": 0,
+          "name": "Language Selector Position",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "MenuTextItem",
+                    "=",
+                    "SceneWindowWidth()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "BitmapTitle",
+                    "=",
+                    "SceneWindowWidth()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "MenuBorder",
+                    "=",
+                    "BitmapMenuStart.CenterX() - (MenuBorder.Width() / 2)",
+                    "=",
+                    "BitmapMenuCredits.CenterY()-(MenuBorder.Height()/2)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "MenuSelector",
+                    "=",
+                    "BitmapMenuStart.CenterX()-(MenuSelector.Width()/2)",
+                    "=",
+                    "BitmapMenuStart.CenterY()-(MenuSelector.Height()/2)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetY"
+                  },
+                  "parameters": [
+                    "GamepadControls",
+                    "=",
+                    "KeyboardControls.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "JumpAttack",
+                    "=",
+                    "SceneWindowWidth()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "LanguageEN",
+                    "=",
+                    "CameraX(\"\",0)-CameraWidth(\"\",0)/2+1080",
+                    "=",
+                    "CameraY(\"\",0)-CameraHeight(\"\",0)/2+20"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetXY"
+                  },
+                  "parameters": [
+                    "LanguageES",
+                    "=",
+                    "CameraX(\"\",0)-CameraWidth(\"\",0)/2+1170",
+                    "=",
+                    "CameraY(\"\",0)-CameraHeight(\"\",0)/2+20"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "LanguageENLabel",
+                    "=",
+                    "LanguageEN.CenterX()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "LanguageENLabel",
+                    "=",
+                    "LanguageEN.CenterY()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "LanguageESLabel",
+                    "=",
+                    "LanguageES.CenterX()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterY"
+                  },
+                  "parameters": [
+                    "LanguageESLabel",
+                    "=",
+                    "LanguageES.CenterY()"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Mobile Menu Touch",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "BitmapMenuStart",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Stage\"",
+                    "yes"
+                  ]
+                }
+              ],
+              "name": "Touch Start"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "BitmapMenuCredits",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Credits\"",
+                    "yes"
+                  ]
+                }
+              ],
+              "name": "Touch Credits"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "IsCursorOnObject"
+                  },
+                  "parameters": [
+                    "BitmapMenuExit",
+                    "",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Quit"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "name": "Touch Exit"
+            }
+          ],
+          "parameters": []
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 1702453580,
+          "ambientLightColorG": 6024528,
+          "ambientLightColorR": 134217728,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "BGLayer1",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 0,
+          "ambientLightColorG": 0,
+          "ambientLightColorR": 0,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ]
+    },
+    {
+      "b": 209,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Stage",
+      "name": "Stage",
+      "r": 209,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 209,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 64,
+        "gridHeight": 64,
+        "gridOffsetX": 0,
+        "gridOffsetY": 16,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.722500000000001,
+        "windowMask": false
+      },
+      "objectsGroups": [
+        {
+          "name": "DebugGroup",
+          "objects": [
+            {
+              "name": "Debug"
+            },
+            {
+              "name": "HP"
+            },
+            {
+              "name": "Stamina"
+            },
+            {
+              "name": "HeroHitbox"
+            },
+            {
+              "name": "Platform"
+            },
+            {
+              "name": "HeroAttackHitbox"
+            },
+            {
+              "name": "Left"
+            },
+            {
+              "name": "Right"
+            },
+            {
+              "name": "BossLocation"
+            },
+            {
+              "name": "Checkpoint"
+            },
+            {
+              "name": "CutsceneCamera"
+            }
+          ]
+        },
+        {
+          "name": "PatrollerEnemy",
+          "objects": [
+            {
+              "name": "Skeleton"
+            }
+          ]
+        },
+        {
+          "name": "Enemy",
+          "objects": [
+            {
+              "name": "Skeleton"
+            },
+            {
+              "name": "Ghost"
+            },
+            {
+              "name": "Wolf"
+            },
+            {
+              "name": "BossSkull"
+            }
+          ]
+        },
+        {
+          "name": "DiverEnemy",
+          "objects": [
+            {
+              "name": "Ghost"
+            }
+          ]
+        },
+        {
+          "name": "DasherEnemy",
+          "objects": [
+            {
+              "name": "Wolf"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "folded": true,
+          "name": "BW",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "BossCamDone",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "BossHeroMoveDone",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "BossStart",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "TouchJumpLatch",
+          "persistentUuid": "6722e1d7-5a49-4f00-93eb-a9bd1009172c",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "TouchAttackLatch",
+          "persistentUuid": "72f0bc25-6212-4c35-9ce3-e5d2e8adff97",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "TouchDashLatch",
+          "persistentUuid": "2815beac-b427-459a-874c-a969da9d1332",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "HeroHitbox",
+          "persistentUuid": "7cb7bea9-380c-4f9f-ac16-ab0f5ea28182",
+          "width": 0,
+          "x": 128,
+          "y": 412,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "Hero",
+          "persistentUuid": "4e138ce9-bce9-4ba0-9bc3-234c86d4c405",
+          "width": 0,
+          "x": 192,
+          "y": 208,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "GUI",
+          "name": "Stamina",
+          "persistentUuid": "22d073e4-d4cf-4350-82fc-4cf721b7dbb9",
+          "width": 0,
+          "x": 1048,
+          "y": 31,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "Debug",
+          "persistentUuid": "3b71e54c-5cac-4558-bc07-6b3d06377c49",
+          "width": 0,
+          "x": 940,
+          "y": 106,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "GUI",
+          "name": "HP",
+          "persistentUuid": "37452f42-f26e-443a-9719-63e56c52ddec",
+          "width": 0,
+          "x": 1048,
+          "y": 82,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "GUI",
+          "name": "FadeObject",
+          "persistentUuid": "cfbf0925-7974-44dc-9ec5-e7db518445b7",
+          "width": 0,
+          "x": -448,
+          "y": -176,
+          "zOrder": 10000,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 2560,
+          "layer": "",
+          "name": "CameraRoom",
+          "persistentUuid": "bf18aaa7-2f1e-4106-a397-dc00d5853348",
+          "width": 11712,
+          "x": 0,
+          "y": -1840,
+          "zOrder": -1000,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 96,
+          "layer": "GUI",
+          "name": "GUIMain",
+          "persistentUuid": "66f4bbdb-2496-445c-9ec3-8a6e9b703912",
+          "width": 256,
+          "x": 20,
+          "y": 20,
+          "zOrder": 100,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "GUI",
+          "name": "GUIHealthPanel",
+          "persistentUuid": "1c420b0b-9341-4078-ac68-97bc0fb2eafc",
+          "width": 0,
+          "x": 124,
+          "y": 20,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "GUI",
+          "name": "GUIStaminaPanel",
+          "persistentUuid": "6cd702b4-be9e-4e8d-ab36-4d7ea32f3b5f",
+          "width": 0,
+          "x": 124,
+          "y": 44,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
