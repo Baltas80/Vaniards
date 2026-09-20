@@ -1,0 +1,1000 @@
+        "kind": "image",
+        "metadata": "",
+        "name": "Pit-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/sword sound.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "sword sound.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/skeletonsfx_exp_short_hard2.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "skeletonsfx_exp_short_hard2.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/bossdeathsfx_exp_cluster1.wav",
+        "kind": "audio",
+        "metadata": "",
+        "name": "bossdeathsfx_exp_cluster1.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Johnathan_So-Victory.ogg",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Johnathan_So-Victory.ogg",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/Pit.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Pit.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/PItBase-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "PItBase-1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "assets/desktop-icon-512.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "desktop-icon-512.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/android-icon-192.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-192.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/android-icon-144.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-144.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/android-icon-96.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-96.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/android-icon-72.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-72.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/android-icon-48.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-48.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/android-icon-36.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "android-icon-36.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-1024.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-1024.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-180.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-180.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-167.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-167.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-152.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-152.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-144.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-144.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-120.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-120.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-114.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-114.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-100.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-100.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-87.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-87.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-80.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-80.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-76.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-76.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-72.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-72.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-60.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-60.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-58.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-58.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-57.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-57.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-50.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-50.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-40.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-40.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-29.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-29.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/ios-icon-20.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "ios-icon-20.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "assets/PlayerHurt.wav",
+        "kind": "audio",
+        "metadata": "{\"jfxr\":{\"data\":\"{\\\"_version\\\":1,\\\"_name\\\":\\\"Hit/hurt 79\\\",\\\"_locked\\\":[],\\\"sampleRate\\\":44100,\\\"attack\\\":0,\\\"sustain\\\":0.09,\\\"sustainPunch\\\":70,\\\"decay\\\":0.06,\\\"tremoloDepth\\\":0,\\\"tremoloFrequency\\\":10,\\\"frequency\\\":700,\\\"frequencySweep\\\":-400,\\\"frequencyDeltaSweep\\\":-500,\\\"repeatFrequency\\\":0,\\\"frequencyJump1Onset\\\":33,\\\"frequencyJump1Amount\\\":0,\\\"frequencyJump2Onset\\\":66,\\\"frequencyJump2Amount\\\":0,\\\"harmonics\\\":0,\\\"harmonicsFalloff\\\":0.5,\\\"waveform\\\":\\\"whitenoise\\\",\\\"interpolateNoise\\\":true,\\\"vibratoDepth\\\":0,\\\"vibratoFrequency\\\":10,\\\"squareDuty\\\":50,\\\"squareDutySweep\\\":0,\\\"flangerOffset\\\":7,\\\"flangerOffsetSweep\\\":9,\\\"bitCrush\\\":16,\\\"bitCrushSweep\\\":0,\\\"lowPassCutoff\\\":22050,\\\"lowPassCutoffSweep\\\":-17000,\\\"highPassCutoff\\\":0,\\\"highPassCutoffSweep\\\":0,\\\"compression\\\":1,\\\"normalization\\\":true,\\\"amplification\\\":100}\",\"name\":\"PlayerHurt\"}}",
+        "name": "PlayerHurt.wav",
+        "preloadAsMusic": false,
+        "preloadAsSound": true,
+        "preloadInCache": false,
+        "userAdded": true
+      }
+    ]
+  },
+  "objects": [],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "objectsGroups": [
+    {
+      "name": "DamageToHero",
+      "objects": [
+        {
+          "name": "Skeleton"
+        },
+        {
+          "name": "Ghost"
+        },
+        {
+          "name": "Wolf"
+        },
+        {
+          "name": "BossSkull"
+        },
+        {
+          "name": "DeathPit"
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "gamepadLeft",
+      "type": "string",
+      "value": "LEFT"
+    },
+    {
+      "name": "gamepadRight",
+      "type": "string",
+      "value": "RIGHT"
+    },
+    {
+      "name": "gamepadUp",
+      "type": "string",
+      "value": "UP"
+    },
+    {
+      "name": "gamepadDown",
+      "type": "string",
+      "value": "DOWN"
+    },
+    {
+      "name": "gamepadJump",
+      "type": "string",
+      "value": "A"
+    },
+    {
+      "name": "gamepadAttack",
+      "type": "string",
+      "value": "X"
+    },
+    {
+      "name": "gamepadDash",
+      "type": "string",
+      "value": "B"
+    },
+    {
+      "name": "keyboardLeft",
+      "type": "string",
+      "value": "a"
+    },
+    {
+      "name": "keyboardRight",
+      "type": "string",
+      "value": "d"
+    },
+    {
+      "name": "keyboardUp",
+      "type": "string",
+      "value": "w"
+    },
+    {
+      "name": "keyboardDown",
+      "type": "string",
+      "value": "s"
+    },
+    {
+      "name": "keyboardJump",
+      "type": "string",
+      "value": "j"
+    },
+    {
+      "name": "keyboardAttack",
+      "type": "string",
+      "value": "k"
+    },
+    {
+      "name": "keyboardDash",
+      "type": "string",
+      "value": "o"
+    },
+    {
+      "name": "DashCost",
+      "type": "string",
+      "value": "25"
+    },
+    {
+      "name": "Cutscene",
+      "type": "string",
+      "value": "0"
+    },
+    {
+      "name": "GameState",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Checkpoint",
+          "type": "string",
+          "value": "0"
+        },
+        {
+          "name": "GameOver",
+          "type": "string",
+          "value": "0"
+        },
+        {
+          "name": "Lives",
+          "type": "string",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "name": "CoyoteTime",
+      "type": "string",
+      "value": "0.0833"
+    },
+    {
+      "name": "Language",
+      "type": "string",
+      "value": "en"
+    }
+  ],
+  "layouts": [
+    {
+      "b": 209,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Title",
+      "name": "Title",
+      "r": 209,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 209,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 4,
+        "gridHeight": 4,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.5199999999999689,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [
+        {
+          "name": "MenuTextItem",
+          "objects": [
+            {
+              "name": "BitmapMenuExit"
+            },
+            {
+              "name": "BitmapMenuCredits"
+            },
+            {
+              "name": "BitmapMenuStart"
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "folded": true,
+          "name": "SelectorButtonsReleased",
+          "persistentUuid": "15d7eb59-141f-47ae-bc1c-dbf917e555bb",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "CurrentMenuItem",
+          "persistentUuid": "256283f8-909b-4786-9982-988b56cf7235",
+          "type": "structure",
+          "children": [
+            {
+              "name": "Down",
+              "persistentUuid": "4d671879-1def-4ab6-9b39-cc47e343d5ba",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "ID",
+              "persistentUuid": "f6ac59b7-a1ca-4a7a-bbdf-18f9c9cfe8da",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Up",
+              "persistentUuid": "bdd96386-4875-4b7c-8fba-43233bdb07f9",
+              "type": "string",
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "BitmapTitle",
+          "persistentUuid": "5e4cf3c7-ee72-4b06-9a7b-4968a7f524b7",
+          "width": 0,
+          "x": 482,
+          "y": 43,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "BitmapMenuStart",
+          "persistentUuid": "36634041-3e96-465f-9a7a-ebb3ff15126b",
+          "width": 0,
+          "x": 552,
+          "y": 476,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "ID",
+              "type": "string",
+              "value": "1"
+            },
+            {
+              "name": "Up",
+              "type": "string",
+              "value": "3"
+            },
+            {
+              "name": "Down",
+              "type": "string",
+              "value": "2"
+            },
+            {
+              "name": "Action",
+              "type": "string",
+              "value": "Start"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 200,
+          "layer": "",
+          "name": "MenuBorder",
+          "persistentUuid": "1bb6807d-9fcb-4617-a2d8-be2df3f75060",
+          "width": 316,
+          "x": 488,
+          "y": 440,
+          "zOrder": 0,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 52,
+          "layer": "",
+          "name": "MenuSelector",
+          "persistentUuid": "1359582a-afc7-4258-8caf-989a57ceca86",
+          "width": 255,
+          "x": 524,
+          "y": 460,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "BitmapMenuCredits",
+          "persistentUuid": "61de35d9-5033-453b-8afa-679160d3549a",
+          "width": 0,
+          "x": 576,
+          "y": 524,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Up",
+              "type": "string",
+              "value": "1"
+            },
+            {
+              "name": "ID",
+              "type": "string",
+              "value": "2"
+            },
+            {
+              "name": "Down",
+              "type": "string",
+              "value": "3"
+            },
+            {
+              "name": "Action",
+              "type": "string",
+              "value": "Credits"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "BitmapMenuExit",
+          "persistentUuid": "33e0ccc3-3f66-4048-b180-d92b43101738",
+          "width": 0,
+          "x": 560,
+          "y": 572,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Up",
+              "type": "string",
+              "value": "2"
+            },
+            {
+              "name": "Down",
+              "type": "string",
+              "value": "1"
+            },
+            {
+              "name": "ID",
+              "type": "string",
+              "value": "3"
+            },
+            {
+              "name": "Action",
+              "type": "string",
+              "value": "Exit"
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 896,
+          "layer": "BGLayer1",
+          "name": "TitleBG1",
+          "persistentUuid": "1db13481-ff80-4950-8242-106717ffabd7",
+          "width": 1536,
+          "x": -128,
+          "y": -4,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "FadeObject",
+          "persistentUuid": "dc86073e-3b78-43ff-af7c-4efd38af5ed6",
+          "width": 0,
+          "x": -268,
+          "y": 152,
+          "zOrder": 106,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 240,
+          "layer": "",
+          "name": "KeyboardControls",
+          "persistentUuid": "a4c364ef-f865-4599-b1aa-3c63454e1413",
+          "width": 324,
+          "x": 24,
+          "y": 172,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 240,
+          "layer": "",
+          "name": "GamepadControls",
+          "persistentUuid": "64b4ec7c-a3ab-4818-b097-36a48be1bc11",
+          "width": 500,
+          "x": 794,
+          "y": 168,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "JumpAttack",
+          "persistentUuid": "d37785db-0d93-4727-a93d-2525e48a4d06",
+          "width": 0,
+          "x": 332,
+          "y": 672,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 45,
+          "keepRatio": true,
+          "layer": "",
+          "name": "LanguageEN",
+          "width": 70,
+          "x": 1090,
+          "y": 20,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [],
+          "persistentUuid": "04d75844-c0ec-4765-9ac9-2ae7948923cf"
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 45,
+          "keepRatio": true,
+          "layer": "",
+          "name": "LanguageES",
+          "width": 70,
+          "x": 1180,
+          "y": 20,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [],
+          "persistentUuid": "e8528f4f-48f6-4e3c-9cf9-052e0f93ed24"
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 25,
+          "keepRatio": true,
+          "layer": "",
+          "name": "LanguageENLabel",
+          "width": 70,
+          "x": 1090,
+          "y": 35,
+          "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [],
+          "persistentUuid": "201e7c3f-1c60-4d72-9933-d43040ec7585"
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 25,
+          "keepRatio": true,
+          "layer": "",
+          "name": "LanguageESLabel",
+          "width": 70,
+          "x": 1180,
+          "y": 35,
+          "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [],
+          "persistentUuid": "fae06650-70e8-48b0-b380-cd62a80e000d"
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "name": "BitmapTitle",
+          "persistentUuid": "75df7bd8-9c82-4112-95ce-5555a326e83d",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "Vaniards",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ff0000",
+            "bitmapFontResourceName": "sanguis80.fnt",
+            "textureAtlasResourceName": "sanguis80_0.png",
+            "align": "left",
+            "wordWrap": true,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "BitmapMenuExit",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [
+            {
+              "name": "Up",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Down",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "ID",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Action",
+              "type": "string",
+              "value": ""
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "EXIT GAME",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "left",
+            "wordWrap": false,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "BitmapMenuCredits",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [
+            {
+              "name": "Up",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Down",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "ID",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Action",
+              "type": "string",
+              "value": ""
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "CREDITS",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "left",
+            "wordWrap": false,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "BitmapMenuStart",
+          "type": "BitmapText::BitmapTextObject",
+          "variables": [
+            {
+              "name": "ID",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Up",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Down",
+              "type": "string",
+              "value": ""
+            },
+            {
+              "name": "Action",
+              "type": "string",
+              "value": ""
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "START GAME",
+            "opacity": 255,
+            "scale": 1,
+            "fontSize": 20,
+            "tint": "#ffffff",
+            "bitmapFontResourceName": "DogicaTake4.fnt",
+            "textureAtlasResourceName": "DogicaTake4_0.png",
+            "align": "left",
+            "wordWrap": false,
+            "verticalTextAlignment": "top"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bottomMargin": 21,
+          "height": 50,
+          "leftMargin": 21,
+          "name": "MenuBorder",
+          "rightMargin": 21,
+          "texture": "NewFile-1.png",
+          "tiled": true,
+          "topMargin": 21,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 50,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "assetStoreId": "",
+          "bottomMargin": 24,
+          "height": 86,
+          "leftMargin": 24,
+          "name": "MenuSelector",
+          "rightMargin": 24,
+          "texture": "Selector-1-1.png",
+          "tiled": true,
+          "topMargin": 24,
+          "type": "PanelSpriteObject::PanelSprite",
+          "width": 172,
+          "variables": [],
+          "effects": [],
+          "behaviors": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": false,
+          "assetStoreId": "",
+          "name": "TitleBG1",
+          "persistentUuid": "bc64f5f8-a467-41c8-970d-84a921e7e1cf",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "TitleBG1",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "BG1-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
