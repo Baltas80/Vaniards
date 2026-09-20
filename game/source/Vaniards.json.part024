@@ -1,0 +1,1000 @@
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+                  },
+                  "parameters": [
+                    "EnemyDeathFire",
+                    "Animation"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "EnemyDeathFire",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        }
+      ]
+    },
+    {
+      "associatedLayout": "Stage",
+      "name": "DasherEnemy",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Dasher Enemy",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Initialization",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SceneJustBegins"
+                      },
+                      "parameters": [
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::PauseAnimation"
+                      },
+                      "parameters": [
+                        "DasherEnemy",
+                        "Animation"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ChangeSprite"
+                      },
+                      "parameters": [
+                        "DasherEnemy",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "colorB": 228,
+              "colorG": 176,
+              "colorR": 74,
+              "creationTime": 0,
+              "name": "Dasher Movement",
+              "source": "",
+              "type": "BuiltinCommonInstructions::Group",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "DasherEnemy",
+                  "conditions": [],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "The Dasher enemy should only start moving if the player is on the ground, and roughly on the same platform as the dasher.\nThis is being checked by comparing the Y position of the player against the Y position of the dasher.\nThe Dasher enemy should only move if they are on screen or about to be on screen. This is checked based off the Dasher's X position vs the center of the camera, and that the value is less than 1/2 the screen width (640).\nThis also only moves if the dasher is facing the direction of the player, by checking if the player's X position is less than the dasher enemy's if it is facing left (unflipped), or if the player's X position is greater than the dasher's if it is facing right (flipped).\nThis should only occur if the dasher hasn't already started to dash."
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "PosY"
+                          },
+                          "parameters": [
+                            "HeroHitbox",
+                            "<=",
+                            "DasherEnemy.Y()+20"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::CompareNumbers"
+                          },
+                          "parameters": [
+                            "abs(DasherEnemy.X()-CameraX(\"\",0))",
+                            "<=",
+                            "640"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PlatformBehavior::IsOnFloor"
+                          },
+                          "parameters": [
+                            "HeroHitbox",
+                            "PlatformerObject"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BuiltinCommonInstructions::Or"
+                          },
+                          "parameters": [],
+                          "subInstructions": [
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::And"
+                              },
+                              "parameters": [],
+                              "subInstructions": [
+                                {
+                                  "type": {
+                                    "inverted": true,
+                                    "value": "FlippableCapability::FlippableBehavior::FlippedX"
+                                  },
+                                  "parameters": [
+                                    "DasherEnemy",
+                                    "Flippable"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "PosX"
+                                  },
+                                  "parameters": [
+                                    "HeroHitbox",
+                                    "<",
+                                    "DasherEnemy.X()"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "BuiltinCommonInstructions::And"
+                              },
+                              "parameters": [],
+                              "subInstructions": [
+                                {
+                                  "type": {
+                                    "value": "FlippableCapability::FlippableBehavior::FlippedX"
+                                  },
+                                  "parameters": [
+                                    "DasherEnemy",
+                                    "Flippable"
+                                  ]
+                                },
+                                {
+                                  "type": {
+                                    "value": "PosX"
+                                  },
+                                  "parameters": [
+                                    "HeroHitbox",
+                                    ">",
+                                    "DasherEnemy.X()"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberObjectVariable"
+                          },
+                          "parameters": [
+                            "DasherEnemy",
+                            "StartDash",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "PlayAnimation"
+                          },
+                          "parameters": [
+                            "DasherEnemy"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "DasherEnemy",
+                            "StartDash",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberObjectVariable"
+                          },
+                          "parameters": [
+                            "DasherEnemy",
+                            "StartDash",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "FlippableCapability::FlippableBehavior::FlippedX"
+                              },
+                              "parameters": [
+                                "DasherEnemy",
+                                "Flippable"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "PlatformBehavior::SimulateRightKey"
+                              },
+                              "parameters": [
+                                "Wolf",
+                                "PlatformerObject"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "FlippableCapability::FlippableBehavior::FlippedX"
+                              },
+                              "parameters": [
+                                "DasherEnemy",
+                                "Flippable"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "PlatformBehavior::SimulateLeftKey"
+                              },
+                              "parameters": [
+                                "Wolf",
+                                "PlatformerObject"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": []
+            }
+          ],
+          "parameters": []
+        }
+      ]
+    }
+  ],
+  "eventsFunctionsExtensions": [
+    {
+      "author": "Bouh",
+      "category": "Input",
+      "dimension": "",
+      "extensionNamespace": "",
+      "fullName": "Gamepads (controllers)",
+      "gdevelopVersion": "",
+      "helpPath": "/all-features/gamepad",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWdhbWVwYWQtdmFyaWFudC1vdXRsaW5lIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTYsOUg4VjExSDEwVjEzSDhWMTVINlYxM0g0VjExSDZWOU0xOC41LDlBMS41LDEuNSAwIDAsMSAyMCwxMC41QTEuNSwxLjUgMCAwLDEgMTguNSwxMkExLjUsMS41IDAgMCwxIDE3LDEwLjVBMS41LDEuNSAwIDAsMSAxOC41LDlNMTUuNSwxMkExLjUsMS41IDAgMCwxIDE3LDEzLjVBMS41LDEuNSAwIDAsMSAxNS41LDE1QTEuNSwxLjUgMCAwLDEgMTQsMTMuNUExLjUsMS41IDAgMCwxIDE1LjUsMTJNMTcsNUE3LDcgMCAwLDEgMjQsMTJBNyw3IDAgMCwxIDE3LDE5QzE1LjA0LDE5IDEzLjI3LDE4LjIgMTIsMTYuOUMxMC43MywxOC4yIDguOTYsMTkgNywxOUE3LDcgMCAwLDEgMCwxMkE3LDcgMCAwLDEgNyw1SDE3TTcsN0E1LDUgMCAwLDAgMiwxMkE1LDUgMCAwLDAgNywxN0M4LjY0LDE3IDEwLjA5LDE2LjIxIDExLDE1SDEzQzEzLjkxLDE2LjIxIDE1LjM2LDE3IDE3LDE3QTUsNSAwIDAsMCAyMiwxMkE1LDUgMCAwLDAgMTcsN0g3WiIgLz48L3N2Zz4=",
+      "name": "Gamepads",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/gamepad-variant-outline.svg",
+      "shortDescription": "Add support for gamepads (or other controllers) to your game, giving access to information such as button presses, axis positions, trigger pressure, etc...",
+      "version": "0.5.0",
+      "description": [
+        "Add support for gamepads (or other controllers).",
+        "",
+        "It gives access to:",
+        "- button presses",
+        "- axis positions and force",
+        "- trigger pressure",
+        "- configurable deadzone",
+        "- vibration",
+        "- automatic mappers for platformer characters and top-down movement",
+        "",
+        "The Bomberman-like example handles 4 players with gamepads ([open the project online](https://editor.gdevelop.io/?project=example://goose-bomberman))."
+      ],
+      "origin": {
+        "identifier": "Gamepads",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "controllers",
+        "gamepads",
+        "joysticks",
+        "axis",
+        "xbox",
+        "ps4"
+      ],
+      "authorIds": [
+        "2OwwM8ToR9dx9RJ2sAKTcrLmCB92",
+        "taRwmWxwAFYFL9yyBwB3cwBw0BO2",
+        "mnImQKdn8nQxwzkS5D6a1JB27V23"
+      ],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [
+        {
+          "description": "Get the value of the pressure on a gamepad trigger.",
+          "fullName": "Pressure on a gamepad trigger",
+          "functionType": "Expression",
+          "name": "TriggerPressure",
+          "sentence": "Player _PARAM1_ push axis _PARAM2_ to _PARAM3_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "/** @type {Gamepad[]} */\r",
+                "const gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r",
+                "\r",
+                "//Get function parameters\r",
+                "const playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r",
+                "const trigger = eventsFunctionContext.getArgument(\"trigger\").toUpperCase();\r",
+                "\r",
+                "if (playerId < 0 || playerId > 4) {\r",
+                "    console.error('Parameter gamepad identifier in expression: \"Pressure on a gamepad trigger\", is not valid number, must be between 0 and 4.');\r",
+                "    return;\r",
+                "}\r",
+                "if (trigger != \"LT\" && trigger != \"RT\" && trigger != \"L2\" && trigger != \"R2\") {\r",
+                "    console.error('Parameter trigger is not valid in expression: \"Pressure on a gamepad trigger\"');\r",
+                "    return;\r",
+                "}\r",
+                "\r",
+                "const gamepad = gamepads[playerId];\r",
+                "\r",
+                "//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r",
+                "if (gamepad == null) return;\r",
+                "\r",
+                "switch (trigger) {\r",
+                "    case 'LT':\r",
+                "    case 'L2':\r",
+                "        eventsFunctionContext.returnValue = gamepad.buttons[6].value;\r",
+                "        break;\r",
+                "\r",
+                "    case 'RT':\r",
+                "    case 'R2':\r",
+                "        eventsFunctionContext.returnValue = gamepad.buttons[7].value;\r",
+                "        break;\r",
+                "\r",
+                "    default:\r",
+                "        eventsFunctionContext.returnValue = -1;\r",
+                "        break;\r",
+                "}"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "name": "player_ID",
+              "type": "expression"
+            },
+            {
+              "description": "Trigger button",
+              "name": "trigger",
+              "supplementaryInformation": "[\"LT\",\"RT\",\"L2\",\"R2\"]",
+              "type": "stringWithSelector"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Get the force value of a gamepad stick.\n0 is stick on default position, 1 is at the maximum.",
+          "fullName": "Value of a stick force",
+          "functionType": "Expression",
+          "name": "StickForce",
+          "sentence": "Player _PARAM1_ push axis _PARAM2_ to _PARAM3_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "/** @type {Gamepad[]} */\r",
+                "const gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r",
+                "\r",
+                "//Get function parameters\r",
+                "const playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r",
+                "const stick = eventsFunctionContext.getArgument(\"stick\").toUpperCase();\r",
+                "\r",
+                "\r",
+                "if (playerId < 0 || playerId > 4) {\r",
+                "    console.error('Parameter gamepad identifier is not valid in expression: \"Value of a stick force\"');\r",
+                "    return;\r",
+                "}\r",
+                "\r",
+                "if (stick !== \"LEFT\" && stick !== \"RIGHT\") {\r",
+                "    console.error('Parameter stick is not valid in expression: \"Value of a stick force\"');\r",
+                "    return;\r",
+                "}\r",
+                "\r",
+                "const gamepad = gamepads[playerId];\r",
+                "\r",
+                "//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r",
+                "if (gamepad == null) return;\r",
+                "\r",
+                "\r",
+                "switch (stick) {\r",
+                "    case 'LEFT':\r",
+                "        eventsFunctionContext.returnValue = gdjs.evtTools.common.clamp(Math.abs(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId)) + Math.abs(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId)), 0, 1);\r",
+                "        break;\r",
+                "\r",
+                "    case 'RIGHT':\r",
+                "        eventsFunctionContext.returnValue = gdjs.evtTools.common.clamp(Math.abs(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId)) + Math.abs(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId)), 0, 1);\r",
+                "        break;\r",
+                "\r",
+                "    default:\r",
+                "        eventsFunctionContext.returnValue = -1;\r",
+                "        break;\r",
+                "}"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "name": "player_ID",
+              "type": "expression"
+            },
+            {
+              "description": "Stick: \"Left\" or \"Right\"",
+              "name": "stick",
+              "supplementaryInformation": "[\"Left\",\"Right\"]",
+              "type": "stringWithSelector"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Get the rotation value of a gamepad stick.\nIf the deadzone value is high, the angle value is rounded to main axes, left, left, up, down.\nAn zero deadzone value give a total freedom on the angle value.",
+          "fullName": "Value of a stick rotation",
+          "functionType": "Expression",
+          "name": "StickRotationValue",
+          "sentence": "Player _PARAM1_ push axis _PARAM2_ to _PARAM3_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "/** @type {Gamepad[]} */\r",
+                "const gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r",
+                "\r",
+                "//Get function parameters\r",
+                "const playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r",
+                "const stick = eventsFunctionContext.getArgument(\"stick\").toUpperCase();\r",
+                "\r",
+                "\r",
+                "if (playerId < 0 || playerId > 4) {\r",
+                "    console.error('Parameter gamepad identifier is not valid in expression: \"Value of a stick rotation\"');\r",
+                "    return;\r",
+                "}\r",
+                "if (stick !== \"LEFT\" && stick !== \"RIGHT\") {\r",
+                "    console.error('Parameter stick is not valid in expression: \"Value of a stick rotation\"');\r",
+                "    return;\r",
+                "}\r",
+                "const gamepad = gamepads[playerId];\r",
+                "\r",
+                "//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r",
+                "if (gamepad == null) return;\r",
+                "\r",
+                "switch (stick) {\r",
+                "    case 'LEFT':\r",
+                "        eventsFunctionContext.returnValue = gdjs._extensionController.axisToAngle(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId), gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId));\r",
+                "        break;\r",
+                "\r",
+                "    case 'RIGHT':\r",
+                "        eventsFunctionContext.returnValue = gdjs._extensionController.axisToAngle(gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId), gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId));\r",
+                "        break;\r",
+                "\r",
+                "    default:\r",
+                "        eventsFunctionContext.returnValue = -1;\r",
+                "        break;\r",
+                "}"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "name": "player_ID",
+              "type": "expression"
+            },
+            {
+              "description": "Stick: \"Left\" or \"Right\"",
+              "name": "stick",
+              "supplementaryInformation": "[\"Left\",\"Right\"]",
+              "type": "stringWithSelector"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Get the value of axis of a gamepad stick.",
+          "fullName": "Value of a gamepad axis",
+          "functionType": "Expression",
+          "name": "AxisValue",
+          "sentence": "Player _PARAM1_ push axis _PARAM2_ to _PARAM3_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "/** @type {Gamepad[]} */\r",
+                "const gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r",
+                "\r",
+                "//Get function parameters\r",
+                "const playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r",
+                "const stick = eventsFunctionContext.getArgument(\"stick\").toUpperCase();\r",
+                "const direction = eventsFunctionContext.getArgument(\"direction\").toUpperCase();\r",
+                "\r",
+                "if (playerId < 0 || playerId > 4) {\r",
+                "    console.error('Parameter gamepad identifier is not valid in expression: \"Value of a gamepad axis\"');\r",
+                "    return;\r",
+                "}\r",
+                "if (stick != \"LEFT\" && stick != \"RIGHT\") {\r",
+                "    console.error('Parameter stick is not valid in expression: \"Value of a gamepad axis\"');\r",
+                "    return;\r",
+                "}\r",
+                "if (direction != \"UP\" && direction != \"DOWN\" && direction != \"LEFT\" && direction != \"RIGHT\" && direction != \"HORIZONTAL\" && direction != \"VERTICAL\") {\r",
+                "    console.error('Parameter direction is not valid in expression: \"Value of a gamepad axis\"');\r",
+                "    return;\r",
+                "}\r",
+                "const gamepad = gamepads[playerId];\r",
+                "\r",
+                "//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r",
+                "if (gamepad == null) return;\r",
+                "\r",
+                "let parameterError = false;\r",
+                "switch (stick) {\r",
+                "    case 'LEFT':\r",
+                "        switch (direction) {\r",
+                "            case 'LEFT':\r",
+                "                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId) < 0) {\r",
+                "                    eventsFunctionContext.returnValue = -gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId);\r",
+                "                }\r",
+                "                break;\r",
+                "\r",
+                "            case 'RIGHT':\r",
+                "                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId) > 0) {\r",
+                "                    eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId);\r",
+                "                }\r",
+                "                break;\r",
+                "\r",
+                "            case 'UP':\r",
+                "                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId) < 0) {\r",
+                "                    eventsFunctionContext.returnValue = -gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId);\r",
+                "                }\r",
+                "                break;\r",
+                "\r",
+                "            case 'DOWN':\r",
+                "                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId) > 0) {\r",
+                "                    eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId);\r",
+                "                }\r",
+                "                break;\r",
+                "\r",
+                "            case \"HORIZONTAL\":\r",
+                "                eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[0], playerId);\r",
+                "                break;\r",
+                "\r",
+                "            case \"VERTICAL\":\r",
+                "                eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[1], playerId);\r",
+                "                break;\r",
+                "\r",
+                "            default:\r",
+                "                break;\r",
+                "        }\r",
+                "        break;\r",
+                "\r",
+                "    case 'RIGHT':\r",
+                "        switch (direction) {\r",
+                "            case 'LEFT':\r",
+                "                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId) < 0) {\r",
+                "                    eventsFunctionContext.returnValue = -gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId);\r",
+                "                }\r",
+                "                break;\r",
+                "\r",
+                "            case 'RIGHT':\r",
+                "                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId) > 0) {\r",
+                "                    eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId);\r",
+                "                }\r",
+                "                break;\r",
+                "\r",
+                "            case 'UP':\r",
+                "                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId) < 0) {\r",
+                "                    eventsFunctionContext.returnValue = -gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId);\r",
+                "                }\r",
+                "                break;\r",
+                "\r",
+                "            case 'DOWN':\r",
+                "                if (gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId) > 0) {\r",
+                "                    eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId);\r",
+                "                }\r",
+                "                break;\r",
+                "\r",
+                "            case \"HORIZONTAL\":\r",
+                "                eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[2], playerId);\r",
+                "                break;\r",
+                "\r",
+                "            case \"VERTICAL\":\r",
+                "                eventsFunctionContext.returnValue = gdjs._extensionController.getNormalizedAxisValue(gamepad.axes[3], playerId);\r",
+                "                break;\r",
+                "\r",
+                "            default:\r",
+                "                break;\r",
+                "        }\r",
+                "        break;\r",
+                "\r",
+                "    default:\r",
+                "        break;\r",
+                "}\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "name": "player_ID",
+              "type": "expression"
+            },
+            {
+              "description": "Stick: \"Left\" or \"Right\"",
+              "name": "stick",
+              "supplementaryInformation": "[\"Left\",\"Right\"]",
+              "type": "stringWithSelector"
+            },
+            {
+              "description": "Direction",
+              "name": "direction",
+              "supplementaryInformation": "[\"Up\",\"Down\",\"Left\",\"Right\",\"Horizontal\",\"Vertical\"]",
+              "type": "stringWithSelector"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Test if a button is released on a gamepad. Buttons can be:\n* Xbox: \"A\", \"B\", \"X\", \"Y\", \"LB\", \"RB\", \"LT\", \"RT\", \"BACK\", \"START\",\n* PS4: \"CROSS\", \"SQUARE\", \"CIRCLE\", \"TRIANGLE\", \"L1\", \"L2\", \"R1\", \"R2\", \"SHARE\", \"OPTIONS\", \"PS_BUTTON\", \"CLICK_TOUCHPAD\",\n* Other: \"UP\", \"DOWN\", \"LEFT\", \"RIGHT\", \"CLICK_STICK_LEFT\", \"CLICK_STICK_RIGHT\".",
+          "fullName": "Gamepad button released",
+          "functionType": "Condition",
+          "name": "C_Button_released",
+          "sentence": "Button _PARAM2_ of gamepad _PARAM1_ is released",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "/** @type {Gamepad[]} */\r",
+                "const gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r",
+                "\r",
+                "//Get function parameters\r",
+                "const playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r",
+                "const button = eventsFunctionContext.getArgument(\"button\").toUpperCase();\r",
+                "\r",
+                "if (playerId < 0 || playerId > 4) {\r",
+                "    console.error('Parameter gamepad identifier in condition: \"Gamepad button released\", is not valid number, must be between 0 and 4.');\r",
+                "    return;\r",
+                "}\r",
+                "if (button === \"\") {\r",
+                "    console.error('Parameter button is not valid in condition: \"Gamepad button released\"');\r",
+                "    return;\r",
+                "}\r",
+                "\r",
+                "const gamepad = gamepads[playerId];\r",
+                "\r",
+                "//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r",
+                "if (gamepad == null) return;\r",
+                "\r",
+                "let buttonId;\r",
+                "\r",
+                "switch (button) {\r",
+                "    case 'A':\r",
+                "    case 'CROSS':\r",
+                "        buttonId = 0;\r",
+                "        break;\r",
+                "    case 'B':\r",
+                "    case 'CIRCLE':\r",
+                "        buttonId = 1;\r",
+                "        break;\r",
+                "    case 'X':\r",
+                "    case 'SQUARE':\r",
+                "        buttonId = 2;\r",
+                "        break;\r",
+                "    case 'Y':\r",
+                "    case 'TRIANGLE':\r",
+                "        buttonId = 3;\r",
+                "        break;\r",
+                "    case 'LB':\r",
+                "    case 'L1':\r",
+                "        buttonId = 4;\r",
+                "        break;\r",
+                "    case 'RB':\r",
+                "    case 'R1':\r",
+                "        buttonId = 5;\r",
+                "        break;\r",
+                "    case 'LT':\r",
+                "    case 'L2':\r",
+                "        buttonId = 6;\r",
+                "        break;\r",
+                "    case 'RT':\r",
+                "    case 'R2':\r",
+                "        buttonId = 7;\r",
+                "        break;\r",
+                "\r",
+                "    case 'UP':\r",
+                "        buttonId = 12;\r",
+                "        break;\r",
+                "    case 'DOWN':\r",
+                "        buttonId = 13;\r",
+                "        break;\r",
+                "    case 'LEFT':\r",
+                "        buttonId = 14;\r",
+                "        break;\r",
+                "    case 'RIGHT':\r",
+                "        buttonId = 15;\r",
+                "        break;\r",
+                "\r",
+                "    case 'BACK':\r",
+                "    case 'SHARE':\r",
+                "        buttonId = 8;\r",
+                "        break;\r",
+                "    case 'START':\r",
+                "    case 'OPTIONS':\r",
+                "        buttonId = 9;\r",
+                "        break;\r",
+                "\r",
+                "    case 'CLICK_STICK_LEFT':\r",
+                "        buttonId = 10;\r",
+                "        break;\r",
+                "    case 'CLICK_STICK_RIGHT':\r",
+                "        buttonId = 11;\r",
+                "        break;\r",
+                "\r",
+                "    //PS4\r",
+                "    case 'PS_BUTTON':\r",
+                "        buttonId = 16;\r",
+                "        break;\r",
+                "    case 'CLICK_TOUCHPAD':\r",
+                "        buttonId = 17;\r",
+                "        break;\r",
+                "\r",
+                "    default:\r",
+                "        console.error('The button: ' + button + ' in condition: \"Gamepad button released\" is not valid.');\r",
+                "        break;\r",
+                "}\r",
+                "\r",
+                "if (buttonId === undefined) {\r",
+                "    console.error('There is no buttons valid in condition: \"Gamepad button released\"');\r",
+                "    eventsFunctionContext.returnValue = false;\r",
+                "    return;\r",
+                "}\r",
+                "\r",
+                "if (gamepad.buttons == null || gamepad.buttons[buttonId] == null) {\r",
+                "    console.error('Buttons on the gamepad are not accessible in condition: \"Gamepad button released\"');\r",
+                "    eventsFunctionContext.returnValue = false;\r",
+                "    return;\r",
+                "}\r",
+                "\r",
+                "//Define default value on pressed button or use previous value\r",
+                "gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId] = gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId] || { pressed: false };\r",
+                "\r",
+                "//Get state of button at previous frame\r",
+                "const previousStateButton = gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId].pressed;\r",
+                "\r",
+                "//When previousStateButton is true and actual button state is not pressed\r",
+                "//Player have release the button\r",
+                "if (previousStateButton === true && gamepad.buttons[buttonId].pressed === false) {\r",
+                "    // Save the last button used for the player    \r",
+                "    gdjs._extensionController.players[playerId].lastButtonUsed = buttonId;\r",
+                "    gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId].pressed = true;\r",
+                "    eventsFunctionContext.returnValue = true;\r",
+                "\r",
+                "} else {\r",
+                "    gdjs._extensionController.players[playerId].previousFrameStateButtons[buttonId].pressed = false;\r",
+                "    eventsFunctionContext.returnValue = false;\r",
+                "}\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "name": "player_ID",
+              "type": "expression"
+            },
+            {
+              "description": "Name of the button",
+              "name": "button",
+              "supplementaryInformation": "[\"A\",\"Cross\",\"B\",\"Circle\",\"X\",\"Square\",\"Y\",\"Triangle\",\"LB\",\"L1\",\"RB\",\"R1\",\"LT\",\"L2\",\"RT\",\"R2\",\"Up\",\"Down\",\"Left\",\"Right\",\"Back\",\"Share\",\"Start\",\"Options\",\"Click_Stick_Left\",\"Click_Stick_Right\",\"PS_Button\",\"Click_Touchpad\"]",
+              "type": "stringWithSelector"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the index of the last pressed button of a gamepad.",
+          "fullName": "Last pressed button (id)",
+          "functionType": "Expression",
+          "name": "LastButtonID",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "//Get function parameter\r",
+                "const playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r",
+                "\r",
+                "//Player id is not valid\r",
+                "if (playerId < 0 || playerId > 4) {\r",
+                "    console.error('Parameter gamepad identifier in expression: \"Last pressed button (id)\", is not valid number, must be between 0 and 4.');\r",
+                "    return;\r",
+                "}\r",
+                "\r",
+                "//Return the last button used by the player\r",
+                "eventsFunctionContext.returnValue = gdjs._extensionController.players[playerId].lastButtonUsed;"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "The gamepad identifier: 1, 2, 3 or 4",
+              "name": "player_ID",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if any button is pressed on a gamepad.",
+          "fullName": "Any gamepad button pressed",
+          "functionType": "Condition",
+          "name": "C_Any_Button_pressed",
+          "sentence": "Any button of gamepad _PARAM1_ is pressed",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "/** @type {Gamepad[]} */\r",
+                "const gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads() : []);\r",
+                "\r",
+                "//Get function parameter\r",
+                "const playerId = eventsFunctionContext.getArgument(\"player_ID\") - 1;\r",
+                "\r",
+                "if (playerId < 0 || playerId > 4) {\r",
+                "    console.error('Parameter gamepad identifier in condition: \"Any gamepad button pressed\", is not valid number, must be between 0 and 4.');\r",
+                "    return;\r",
+                "}\r",
+                "const gamepad = gamepads[playerId];\r",
+                "\r",
+                "//we need keep this condition because when use have not yet plug her controller we can't get the controller in the gamepad variable.\r",
+                "if (gamepad == null) return;\r",
+                "\r",
+                "let buttonId;\r",
+                "for (let i = 0; i < gamepad.buttons.length; i++) { //For each buttons\r",
+                "    if (gamepad.buttons[i].pressed) { //One of them is pressed\r",
+                "        buttonId = i; //Save the button pressed\r",
+                "        break;\r",
+                "    }\r",
+                "}\r",
+                "\r",
+                "if (buttonId === undefined) {\r",
+                "    // No buttons are pressed.\r",
+                "    eventsFunctionContext.returnValue = false;\r",
+                "    return;\r",
+                "}\r",
+                "\r",
+                "if (gamepad.buttons == null || gamepad.buttons[buttonId] == null) {\r",
+                "    console.error('Buttons on the gamepad are not accessible in condition: \"Any gamepad button pressed\"');\r",
+                "    eventsFunctionContext.returnValue = false;\r",
+                "    return;\r",
+                "}\r",
+                "\r",
+                "//When a button is pressed, save the button in lastButtonUsed for each players\r",
+                "if (gamepad.buttons[buttonId].pressed) gdjs._extensionController.players[playerId].lastButtonUsed = buttonId;\r",
+                "eventsFunctionContext.returnValue = gamepad.buttons[buttonId].pressed;\r",
+                "\r",
+                "\r",
