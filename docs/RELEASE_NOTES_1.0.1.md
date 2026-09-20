@@ -1,13 +1,25 @@
 # Vaniards 1.0.1
 
-## Build artifact
+## Existing APK
 
 `Vaniards - Copy-1_0_1.apk`
 
-## Status
+The APK currently stored in this repository is the existing test/reference build.
 
-Reference/test Android build. The final Google Play release must be generated as a signed AAB after the Android target and release configuration have been verified.
+## Updated source preparation
 
-## Next release gate
+The editable GDevelop project has been prepared for the Android release with:
+- Mobile touch controls for movement, jump, attack and dash.
+- Touch navigation on the title menu.
+- English as the default language.
+- Spanish translation and language selector.
+- Mobile runtime resolution adaptation.
+- Android application ID set to `com.baltas80.vaniards`.
+- Version set to `1.0.1`.
+- The GDevelop anonymous metrics event removed.
 
-The project is ready to move from the current test APK to the Android release configuration and Google Play testing track once the GDevelop project is connected to the repository and the final Android export settings are confirmed.
+## Final release gate
+
+The final Google Play artifact must be generated from the updated GDevelop project as a **signed Android App Bundle (`.aab`)**, targeting Android 16 / API 36 or higher, then tested on real Android hardware.
+
+The existing APK remains available as a reference and should not be treated as the final Play Store upload.
