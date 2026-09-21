@@ -59,6 +59,23 @@ jobs:
           print("Project JSON valid:", p.stat().st_size, "bytes")
           PY
 
+      - name: Patch mobile controls for true multitouch
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/patch_mobile_multitouch.py game/Vaniards.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("game/Vaniards.json")
+          data = json.loads(p.read_text(encoding="utf-8"))
+          stage = next(s for s in data["layouts"] if s.get("name") == "Stage")
+          group = next(e for e in stage["events"] if e.get("name") == "Mobile Touch Controls")
+          assert any(v.get("name") == "TouchMoveId" for v in stage.get("variables", []))
+          assert any(e.get("type") == "BuiltinCommonInstructions::Repeat" for e in group["events"])
+          print("Multitouch patch validated.")
+          PY
+
       - name: Recover game assets from reference APK
         shell: bash
         run: |
