@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
-"""Use GDevelop's current SpriteMultitouchJoystick extension for Vaniards."""
+"""Install GDevelop's official multitouch joystick/buttons and mobile layout."""
 from __future__ import annotations
 import json
 import sys
 import uuid
 from pathlib import Path
 
-JOYSTICK_TYPE = "SpriteMultitouchJoystick::SpriteMultitouchJoystick"
-MULTITOUCH_BUTTON = "SpriteMultitouchJoystick::MultitouchButton"
-PLATFORMER_MAPPER = "SpriteMultitouchJoystick::PlatformerMultitouchMapper"
+JOYSTICK = "SpriteMultitouchJoystick::SpriteMultitouchJoystick"
+BUTTON = "SpriteMultitouchJoystick::MultitouchButton"
+MAPPER = "SpriteMultitouchJoystick::PlatformerMultitouchMapper"
 
-def cond(value, params, inverted=False):
-    t = {"value": value}
-    if inverted:
-        t["inverted"] = True
-    return {"type": t, "parameters": params}
+
+def condition(value, params):
+    return {"type": {"value": value}, "parameters": params}
+
 
 def action(value, params):
     return {"type": {"value": value}, "parameters": params}
+
 
 def standard(conditions=None, actions=None, events=None):
     return {
@@ -27,137 +27,67 @@ def standard(conditions=None, actions=None, events=None):
         "events": events or [],
     }
 
+
 def group(name, events):
     return {
-        "colorB": 74,
-        "colorG": 176,
-        "colorR": 228,
-        "creationTime": 0,
-        "name": name,
-        "source": "",
-        "type": "BuiltinCommonInstructions::Group",
-        "events": events,
+        "colorB": 74, "colorG": 176, "colorR": 228,
+        "creationTime": 0, "name": name, "source": "",
+        "type": "BuiltinCommonInstructions::Group", "events": events,
         "parameters": [],
     }
 
-def behavior_button(identifier):
+
+def button_behavior(identifier):
     return {
-        "name": "MultitouchButton",
-        "type": MULTITOUCH_BUTTON,
-        "ControllerIdentifier": 1,
-        "ButtonIdentifier": identifier,
-        "TouchId": 0,
-        "TouchIndex": 0,
-        "IsReleased": False,
-        "IsJustPressed": False,
-        "Radius": 0,
+        "name": "MultitouchButton", "type": BUTTON,
+        "ControllerIdentifier": 1, "ButtonIdentifier": identifier,
+        "TouchId": 0, "TouchIndex": 0, "IsReleased": False,
+        "IsJustPressed": False, "Radius": 0,
     }
 
-def ensure_button_behavior(obj, identifier):
-    behaviors = obj.setdefault("behaviors", [])
-    behaviors[:] = [b for b in behaviors if b.get("type") != MULTITOUCH_BUTTON]
-    behaviors.append(behavior_button(identifier))
 
-def set_hidden(instance):
-    instance["opacity"] = 0
-
-def ensure_resource(data, filename):
-    resources = data.setdefault("resources", {}).setdefault("resources", [])
-    if not any(r.get("file") == filename for r in resources):
-        resources.append({
-            "file": filename,
-            "kind": "image",
-            "metadata": "",
-            "name": Path(filename).name,
-            "smoothed": False,
-            "userAdded": True,
-        })
-
-def make_joystick_object(transparent_file):
+def make_joystick():
+    # Completely transparent visual object: the joystick remains a touch control,
+    # but no arrows/circle are drawn over the game.
+    transparent = "assets/vaniards_touch_transparent.png"
+    sprite = {
+        "hasCustomCollisionMask": False, "image": transparent, "points": [],
+        "originPoint": {"name": "origine", "x": 0, "y": 0},
+        "centerPoint": {"automatic": True, "name": "centre", "x": 0, "y": 0},
+        "customCollisionMask": [],
+    }
+    animation = {"name": "Idle", "useMultipleDirections": False,
+                 "directions": [{"looping": False, "timeBetweenFrames": 0.08,
+                                  "sprites": [sprite]}]}
+    child = {"adaptCollisionMaskAutomatically": False,
+             "updateIfNotVisible": False, "animations": [animation]}
     return {
-        "assetStoreId": "",
-        "name": "MoveJoystick",
-        "type": JOYSTICK_TYPE,
-        "variant": "",
-        "variables": [],
-        "effects": [],
-        "behaviors": [],
-        "content": {"DeadZoneRadius": 0.12},
-        "childrenContent": {
-            "Border": {
-                "adaptCollisionMaskAutomatically": False,
-                "updateIfNotVisible": False,
-                "animations": [{
-                    "name": "Idle",
-                    "useMultipleDirections": False,
-                    "directions": [{
-                        "looping": False,
-                        "timeBetweenFrames": 0.08,
-                        "sprites": [{
-                            "hasCustomCollisionMask": False,
-                            "image": transparent_file,
-                            "points": [],
-                            "originPoint": {"name": "origine", "x": 0, "y": 0},
-                            "centerPoint": {"automatic": True, "name": "centre", "x": 0, "y": 0},
-                            "customCollisionMask": [],
-                        }]
-                    }]
-                }]
-            },
-            "Thumb": {
-                "adaptCollisionMaskAutomatically": False,
-                "updateIfNotVisible": False,
-                "animations": [{
-                    "name": "Idle",
-                    "useMultipleDirections": False,
-                    "directions": [{
-                        "looping": False,
-                        "timeBetweenFrames": 0.08,
-                        "sprites": [{
-                            "hasCustomCollisionMask": False,
-                            "image": transparent_file,
-                            "points": [],
-                            "originPoint": {"name": "origine", "x": 0, "y": 0},
-                            "centerPoint": {"automatic": True, "name": "centre", "x": 0, "y": 0},
-                            "customCollisionMask": [],
-                        }]
-                    }]
-                }]
-            }
-        }
+        "assetStoreId": "", "name": "MoveJoystick", "type": JOYSTICK,
+        "variant": "", "variables": [], "effects": [], "behaviors": [],
+        "content": {"DeadZoneRadius": 0.10, "ControllerIdentifier": 1,
+                     "JoystickIdentifier": "Primary"},
+        "childrenContent": {"Border": child, "Thumb": child.copy()},
     }
 
-def make_instance(name, x, y, width, height, z):
+
+def instance(name, x=0, y=0, width=120, height=120, z=101):
     return {
-        "angle": 0,
-        "customSize": True,
-        "height": height,
-        "keepRatio": True,
-        "layer": "GUI",
-        "locked": True,
-        "name": name,
-        "persistentUuid": str(uuid.uuid4()),
-        "width": width,
-        "x": x,
-        "y": y,
-        "zOrder": z,
-        "numberProperties": [],
-        "stringProperties": [],
+        "angle": 0, "customSize": True, "height": height, "keepRatio": True,
+        "layer": "GUI", "locked": False, "name": name,
+        "persistentUuid": str(uuid.uuid4()), "width": width, "x": x, "y": y,
+        "zOrder": z, "numberProperties": [], "stringProperties": [],
         "initialVariables": [],
     }
 
-def patch(path, extension_path):
-    data = json.loads(path.read_text(encoding="utf-8"))
-    ext_project = json.loads(extension_path.read_text(encoding="utf-8"))
-    extension = next(
-        (e for e in ext_project.get("eventsFunctionsExtensions", [])
-         if e.get("name") == "SpriteMultitouchJoystick"),
-        None,
-    )
-    if extension is None:
-        raise RuntimeError("SpriteMultitouchJoystick extension not found in reference project")
 
-    # Replace any older copy with the current extension used by the official GDevelop examples.
+def patch(project_path: Path, reference_path: Path):
+    data = json.loads(project_path.read_text(encoding="utf-8"))
+    ref = json.loads(reference_path.read_text(encoding="utf-8"))
+    extension = next((e for e in ref.get("eventsFunctionsExtensions", [])
+                      if e.get("name") == "SpriteMultitouchJoystick"), None)
+    if extension is None:
+        raise RuntimeError("Official SpriteMultitouchJoystick extension not found")
+
     data["eventsFunctionsExtensions"] = [
         e for e in data.get("eventsFunctionsExtensions", [])
         if e.get("name") != "SpriteMultitouchJoystick"
@@ -166,107 +96,108 @@ def patch(path, extension_path):
     stage = next((s for s in data.get("layouts", []) if s.get("name") == "Stage"), None)
     if stage is None:
         raise RuntimeError("Stage layout not found")
-
     objects = stage.setdefault("objects", [])
     by_name = {o.get("name"): o for o in objects}
 
-    # Create the real multitouch joystick object. Its child sprites are transparent;
-    # the visible joystick is supplied by the pointer-transparent HTML overlay.
-    transparent_file = "assets/vaniards_touch_transparent.png"
-    ensure_resource(data, transparent_file)
+    # Transparent joystick. Input remains active; only its artwork is invisible.
+    transparent = "assets/vaniards_touch_transparent.png"
+    resources = data.setdefault("resources", {}).setdefault("resources", [])
+    if not any(r.get("file") == transparent for r in resources):
+        resources.append({"file": transparent, "kind": "image", "metadata": "",
+                          "name": Path(transparent).name, "smoothed": False,
+                          "userAdded": True})
     objects[:] = [o for o in objects if o.get("name") != "MoveJoystick"]
-    joystick_obj = make_joystick_object(transparent_file)
-    objects.append(joystick_obj)
+    objects.append(make_joystick())
 
-    # Turn the existing touch buttons into true per-finger multitouch buttons.
+    # Real multitouch buttons. Do NOT hide them: their artwork is the visible
+    # action-button layer and their hit areas are independent from the joystick.
     mapping = {"TouchJump": "A", "TouchAttack": "B", "TouchDash": "C"}
     for name, identifier in mapping.items():
         obj = by_name.get(name)
         if obj is None:
-            raise RuntimeError(f"Missing touch button object: {name}")
-        ensure_button_behavior(obj, identifier)
-        obj["opacity"] = 0
+            raise RuntimeError(f"Missing object: {name}")
+        obj["behaviors"] = [b for b in obj.get("behaviors", []) if b.get("type") != BUTTON]
+        obj["behaviors"].append(button_behavior(identifier))
+        obj["opacity"] = 255
 
-    # Disable/hide legacy movement pads and labels; they are no longer the input path.
-    for obj in objects:
-        if obj.get("name") in {"TouchLeft", "TouchRight", "TouchJumpLabel", "TouchRightLabel",
-                               "TouchLeftLabel", "TouchAttackLabel", "TouchDashLabel", "TouchJumpLabel"}:
-            obj["opacity"] = 0
-
-    # Remove any previous mapper and attach the official mapper to the platformer hitbox.
-    hero_hitbox = next((o for o in objects if o.get("name") == "HeroHitbox"), None)
-    if hero_hitbox is None:
+    hero = next((o for o in objects if o.get("name") == "HeroHitbox"), None)
+    if hero is None:
         raise RuntimeError("HeroHitbox not found")
-    hero_hitbox["behaviors"] = [
-        b for b in hero_hitbox.get("behaviors", [])
-        if b.get("type") != PLATFORMER_MAPPER
-    ]
-    hero_hitbox["behaviors"].append({
-        "isFolded": True,
-        "name": "PlatformerMultitouchMapper",
-        "type": PLATFORMER_MAPPER,
-        "Property": "PlatformerObject",
-        "ControllerIdentifier": 1,
-        "JoystickIdentifier": "Primary",
-        "JumpButton": "A",
+    hero["behaviors"] = [b for b in hero.get("behaviors", []) if b.get("type") != MAPPER]
+    hero["behaviors"].append({
+        "isFolded": True, "name": "PlatformerMultitouchMapper", "type": MAPPER,
+        "Property": "PlatformerObject", "ControllerIdentifier": 1,
+        "JoystickIdentifier": "Primary", "JumpButton": "A",
     })
 
-    # Add the joystick instance.
     instances = stage.setdefault("instances", [])
     instances[:] = [i for i in instances if i.get("name") != "MoveJoystick"]
-    instances.append(make_instance("MoveJoystick", 150, 600, 190, 190, 101))
+    instances.append(instance("MoveJoystick", 110, 500, 210, 210, 101))
 
-    # Position the hidden action hitboxes to match the visible right-side controls.
+    # Large separation between right-side buttons. Positions are also recalculated
+    # every frame from the actual game window, so different phone aspect ratios work.
     positions = {
-        "TouchJump": (970, 625, 120, 120),
-        "TouchAttack": (1140, 625, 120, 120),
-        "TouchDash": (1090, 505, 120, 120),
+        "TouchJump": ("SceneWindowWidth() - 330", "SceneWindowHeight() - 120"),
+        "TouchAttack": ("SceneWindowWidth() - 155", "SceneWindowHeight() - 120"),
+        "TouchDash": ("SceneWindowWidth() - 245", "SceneWindowHeight() - 285"),
     }
     for inst in instances:
         if inst.get("name") in positions:
-            x, y, w, h = positions[inst["name"]]
-            inst.update({"x": x, "y": y, "width": w, "height": h, "customSize": True, "opacity": 0, "layer": "GUI"})
+            x, y = positions[inst["name"]]
+            inst.update({"x": 0, "y": 0, "width": 118, "height": 118,
+                         "customSize": True, "layer": "GUI", "opacity": 255})
 
-    # Replace the legacy touch-control event group with the official controller path.
     events = stage.get("events", [])
-    keep = [e for e in events if e.get("name") != "Mobile Touch Controls"]
+    events = [e for e in events if e.get("name") not in {
+        "Mobile Touch Controls", "Mobile Touch Controls (Official Multitouch)",
+        "Mobile Control Layout"
+    }]
 
-    mobile_events = [
-        {"type": "BuiltinCommonInstructions::Comment",
-         "color": {"b": 109, "g": 230, "r": 255, "textB": 0, "textG": 0, "textR": 0},
-         "comment": "Official GDevelop SpriteMultitouchJoystick extension. Movement uses a fixed free joystick; jump, attack and dash use independent touch IDs so multiple fingers can be used simultaneously.",
-         "comment2": ""},
+    # Use the extension's own IsPressed condition for attack/dash. This is important:
+    # ordinary cursor/touch conditions can lose the second finger while the joystick
+    # finger is held. The official extension tracks each touch independently.
+    mobile = [
         standard(
-            [cond("SpriteMultitouchJoystick::MultitouchButton::IsJustPressed", ["TouchAttack", "MultitouchButton", ""])],
-            [
-                action("SetStringObjectVariable", ["Hero", "heroFSM", "=", "\"Attack\""]),
-            ],
+            [condition("SpriteMultitouchJoystick::MultitouchButton::IsPressed",
+                       ["TouchAttack", "MultitouchButton", ""])],
+            [action("SetStringObjectVariable", ["Hero", "heroFSM", "=", "\"Attack\""])],
         ),
         standard(
-            [
-                cond("SpriteMultitouchJoystick::MultitouchButton::IsJustPressed", ["TouchDash", "MultitouchButton", ""]),
-                cond("NumberObjectVariable", ["Hero", "hasDashed", "=", "0"]),
-                cond("NumberObjectVariable", ["Hero", "heroStam", ">=", "DashCost"]),
-                cond("PlatformBehavior::IsOnFloor", ["HeroHitbox", "PlatformerObject"]),
-            ],
-            [
-                action("SetStringObjectVariable", ["Hero", "heroFSM", "=", "\"Dash\""]),
-            ],
+            [condition("SpriteMultitouchJoystick::MultitouchButton::IsPressed",
+                       ["TouchDash", "MultitouchButton", ""]),
+             condition("NumberObjectVariable", ["Hero", "hasDashed", "=", "0"]),
+             condition("NumberObjectVariable", ["Hero", "heroStam", ">=", "DashCost"]),
+             condition("PlatformBehavior::IsOnFloor", ["HeroHitbox", "PlatformerObject"])],
+            [action("SetStringObjectVariable", ["Hero", "heroFSM", "=", "\"Dash\""])],
         ),
     ]
-    keep.append(group("Mobile Touch Controls (Official Multitouch)", mobile_events))
-    stage["events"] = keep
+    events.append(group("Mobile Touch Controls (Official Multitouch)", mobile))
 
-    # Shared behavior data for editor compatibility.
+    # Layout is tied to the actual window. Keep controls in GUI, never in world space.
+    layout_events = []
+    for name, (x, y) in positions.items():
+        layout_events.append(standard([], [
+            action("SetX", [name, "", "=", x]),
+            action("SetY", [name, "", "=", y]),
+        ]))
+    # Joystick is deliberately transparent and stays in the lower-left safe zone.
+    layout_events.append(standard([], [
+        action("SetX", ["MoveJoystick", "", "=", "120"]),
+        action("SetY", ["MoveJoystick", "", "=", "SceneWindowHeight() - 120"]),
+    ]))
+    events.append(group("Mobile Control Layout", layout_events))
+    stage["events"] = events
+
     shared = stage.setdefault("behaviorsSharedData", [])
-    existing_shared = {b.get("name"): b for b in shared}
-    if "MultitouchButton" not in existing_shared:
-        shared.append({"name": "MultitouchButton", "type": MULTITOUCH_BUTTON})
-    if "PlatformerMultitouchMapper" not in existing_shared:
-        shared.append({"name": "PlatformerMultitouchMapper", "type": PLATFORMER_MAPPER})
+    names = {b.get("name") for b in shared}
+    if "MultitouchButton" not in names:
+        shared.append({"name": "MultitouchButton", "type": BUTTON})
+    if "PlatformerMultitouchMapper" not in names:
+        shared.append({"name": "PlatformerMultitouchMapper", "type": MAPPER})
 
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    print("Official SpriteMultitouchJoystick controls installed.")
+    project_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    print("Official multitouch controls installed: transparent joystick, separated buttons, dynamic GUI layout.")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
