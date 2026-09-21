@@ -72,9 +72,34 @@ jobs:
           stage = next(s for s in data["layouts"] if s.get("name") == "Stage")
           group = next(e for e in stage["events"] if e.get("name") == "Mobile Touch Controls")
           assert any(v.get("name") == "TouchMoveId" for v in stage.get("variables", []))
-          repeat_events = [child for e in group["events"] for child in e.get("events", [])]
           assert any(e.get("type") == "BuiltinCommonInstructions::Standard" and any(ev.get("type") == "BuiltinCommonInstructions::Repeat" for ev in e.get("events", [])) for e in group["events"])
           print("Multitouch patch validated.")
+          PY
+
+      - name: Arrange mobile controls as free joystick
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/patch_mobile_layout.py game/Vaniards.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("game/Vaniards.json").read_text(encoding="utf-8"))
+          stage = next(s for s in data["layouts"] if s.get("name") == "Stage")
+          names = {}
+          def walk(v):
+              if isinstance(v, dict):
+                  if v.get("name") in {"TouchLeft","TouchRight","TouchJump","TouchAttack","TouchDash"} and "x" in v:
+                      names[v["name"]] = v
+                  for c in v.values(): walk(c)
+              elif isinstance(v, list):
+                  for c in v: walk(c)
+          walk(stage)
+          assert names["TouchLeft"]["x"] == names["TouchRight"]["x"] == 150
+          assert names["TouchLeft"]["y"] == names["TouchRight"]["y"] == 600
+          assert names["TouchJump"]["x"] != names["TouchAttack"]["x"]
+          assert all(names[n].get("opacity") == 0 for n in names)
+          print("Mobile layout validated:", {k:(v['x'],v['y']) for k,v in names.items()})
           PY
 
       - name: Recover game assets from reference APK
@@ -106,6 +131,14 @@ jobs:
             --run-command EXPORT_HTML5_EXTERNAL "$PWD/game/Vaniards.json"
           test -f build/html5/index.html
           echo "HTML5 export completed."
+
+      - name: Inject joystick-style mobile visuals
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/inject_mobile_controls_overlay.py build/html5/index.html
+          grep -q "vaniards-mobile-controls" build/html5/index.html
+          echo "Mobile joystick overlay injected."
 
       - name: Prepare Cordova Android shell
         shell: bash
@@ -159,7 +192,7 @@ jobs:
         run: |
           set -euo pipefail
           printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > upload-keystore.jks
-          jarsigner             -keystore upload-keystore.jks             -storepass "$ANDROID_KEYSTORE_PASSWORD"             -keypass "$ANDROID_KEY_PASSWORD"             -signedjar Vaniards-1.0.1.aab             Vaniards-1.0.1-unsigned.aab             "$ANDROID_KEY_ALIAS"
+          jarsigner -keystore upload-keystore.jks -storepass "$ANDROID_KEYSTORE_PASSWORD" -keypass "$ANDROID_KEY_PASSWORD" -signedjar Vaniards-1.0.1.aab Vaniards-1.0.1-unsigned.aab "$ANDROID_KEY_ALIAS"
           jarsigner -verify -strict Vaniards-1.0.1.aab
           rm -f upload-keystore.jks
 
