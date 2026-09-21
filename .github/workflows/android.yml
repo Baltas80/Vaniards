@@ -72,7 +72,8 @@ jobs:
           stage = next(s for s in data["layouts"] if s.get("name") == "Stage")
           group = next(e for e in stage["events"] if e.get("name") == "Mobile Touch Controls")
           assert any(v.get("name") == "TouchMoveId" for v in stage.get("variables", []))
-          assert any(e.get("type") == "BuiltinCommonInstructions::Repeat" for e in group["events"])
+          repeat_events = [child for e in group["events"] for child in e.get("events", [])]
+          assert any(e.get("type") == "BuiltinCommonInstructions::Standard" and any(ev.get("type") == "BuiltinCommonInstructions::Repeat" for ev in e.get("events", [])) for e in group["events"])
           print("Multitouch patch validated.")
           PY
 
