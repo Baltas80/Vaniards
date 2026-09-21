@@ -59,47 +59,53 @@ jobs:
           print("Project JSON valid:", p.stat().st_size, "bytes")
           PY
 
-      - name: Patch mobile controls for true multitouch
+      - name: Prepare official GDevelop multitouch extension
         shell: bash
         run: |
           set -euo pipefail
-          python3 scripts/patch_mobile_multitouch.py game/Vaniards.json
+          mkdir -p .gdevelop-reference game/assets
+          curl -L --fail --retry 3 -o .gdevelop-reference/starting-platformer.json \
+            "https://raw.githubusercontent.com/GDevelopApp/GDevelop-examples/2f42a1c2138f401facb6c801711b5cdcb1b53c84/examples/starting-platformer/starting-platformer.json"
           python3 - <<'PY'
-          import json
+          import json, struct, zlib
           from pathlib import Path
-          p = Path("game/Vaniards.json")
-          data = json.loads(p.read_text(encoding="utf-8"))
-          stage = next(s for s in data["layouts"] if s.get("name") == "Stage")
-          group = next(e for e in stage["events"] if e.get("name") == "Mobile Touch Controls")
-          assert any(v.get("name") == "TouchMoveId" for v in stage.get("variables", []))
-          assert any(e.get("type") == "BuiltinCommonInstructions::Standard" and any(ev.get("type") == "BuiltinCommonInstructions::Repeat" for ev in e.get("events", [])) for e in group["events"])
-          print("Multitouch patch validated.")
+
+          out = Path("game/assets/vaniards_touch_transparent.png")
+          def chunk(kind, data):
+              return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xffffffff)
+          # 2x2 transparent RGBA PNG.
+          raw = b"\x00\x00\x00\x00" + b"\x00\x00\x00\x00"
+          png = (
+              b"\x89PNG\r\n\x1a\n" +
+              chunk(b"IHDR", struct.pack(">IIBBBBB", 2, 2, 8, 6, 0, 0, 0)) +
+              chunk(b"IDAT", zlib.compress(raw)) +
+              chunk(b"IEND", b"")
+          )
+          out.write_bytes(png)
+          json.loads(Path(".gdevelop-reference/starting-platformer.json").read_text(encoding="utf-8"))
+          print("Reference project + transparent joystick asset ready.")
           PY
 
-      - name: Arrange mobile controls as free joystick
+      - name: Install official SpriteMultitouchJoystick controls
         shell: bash
         run: |
           set -euo pipefail
-          python3 scripts/patch_mobile_layout.py game/Vaniards.json
+          python3 scripts/patch_mobile_controls_official.py game/Vaniards.json .gdevelop-reference/starting-platformer.json
           python3 - <<'PY'
           import json
           from pathlib import Path
           data = json.loads(Path("game/Vaniards.json").read_text(encoding="utf-8"))
           stage = next(s for s in data["layouts"] if s.get("name") == "Stage")
-          names = {}
-          def walk(v):
-              if isinstance(v, dict):
-                  if v.get("name") in {"TouchLeft","TouchRight","TouchJump","TouchAttack","TouchDash"} and "x" in v:
-                      names[v["name"]] = v
-                  for c in v.values(): walk(c)
-              elif isinstance(v, list):
-                  for c in v: walk(c)
-          walk(stage)
-          assert names["TouchLeft"]["x"] == names["TouchRight"]["x"] == 150
-          assert names["TouchLeft"]["y"] == names["TouchRight"]["y"] == 600
-          assert names["TouchJump"]["x"] != names["TouchAttack"]["x"]
-          assert all(names[n].get("opacity") == 0 for n in names)
-          print("Mobile layout validated:", {k:(v['x'],v['y']) for k,v in names.items()})
+          ext = [e for e in data.get("eventsFunctionsExtensions", []) if e.get("name") == "SpriteMultitouchJoystick"]
+          hero = next(o for o in stage["objects"] if o.get("name") == "HeroHitbox")
+          assert len(ext) == 1
+          assert any(o.get("name") == "MoveJoystick" and o.get("type") == "SpriteMultitouchJoystick::SpriteMultitouchJoystick" for o in stage["objects"])
+          assert any(b.get("type") == "SpriteMultitouchJoystick::PlatformerMultitouchMapper" for b in hero.get("behaviors", []))
+          for name in ("TouchJump", "TouchAttack", "TouchDash"):
+              obj = next(o for o in stage["objects"] if o.get("name") == name)
+              assert any(b.get("type") == "SpriteMultitouchJoystick::MultitouchButton" for b in obj.get("behaviors", []))
+          assert Path("game/assets/vaniards_touch_transparent.png").exists()
+          print("Official multitouch extension installed and validated.")
           PY
 
       - name: Recover game assets from reference APK
