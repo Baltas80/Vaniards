@@ -54,9 +54,9 @@ OVERLAY = r'''
     letter-spacing: .03em;
     text-shadow: 1px 1px 2px rgba(0,0,0,.50);
   }
-  .vaniards-mobile-controls .dash { right: 12%; bottom: 34%; }
-  .vaniards-mobile-controls .jump { right: 29%; bottom: 9%; }
-  .vaniards-mobile-controls .atk  { right: 6%;  bottom: 9%; }
+  #vaniards-mobile-controls .dash { right: 12%; bottom: 34%; }
+  #vaniards-mobile-controls .jump { right: 29%; bottom: 9%; }
+  #vaniards-mobile-controls .atk  { right: 6%;  bottom: 9%; }
 
   @media (orientation: portrait) {
     #vaniards-mobile-controls .vc-joystick { left: 6%; bottom: 8%; width: 25%; }
