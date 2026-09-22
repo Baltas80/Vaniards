@@ -93,88 +93,63 @@ def _contains_input(node, names):
     return False
 
 
-def _add_touch_to_condition_list(conditions, names, object_name, inverted=False):
-    """Add the matching multitouch button to an existing input condition."""
-    if not conditions or not _contains_input(conditions, names):
+def _add_touch_condition(conditions, object_name, inverted):
+    if any(
+        isinstance(c, dict)
+        and c.get("type", {}).get("value") == "SpriteMultitouchJoystick::MultitouchButton::IsPressed"
+        and c.get("type", {}).get("inverted", False) == inverted
+        for c in conditions
+    ):
+        return
+    conditions.append(condition(
+        "SpriteMultitouchJoystick::MultitouchButton::IsPressed",
+        [object_name, "MultitouchButton", ""],
+        inverted=inverted,
+    ))
+
+
+def _add_touch_to_condition_list(conditions, input_names, object_name, inverted):
+    if not _contains_input(conditions, input_names):
         return
     touch = condition(
         "SpriteMultitouchJoystick::MultitouchButton::IsPressed",
         [object_name, "MultitouchButton", ""],
         inverted=inverted,
     )
-    # Normal action input is usually inside one Or block.
     for c in conditions:
-        if isinstance(c, dict):
-            typ = c.get("type", {})
-            if typ.get("value") == "BuiltinCommonInstructions::Or":
-                subs = c.setdefault("subInstructions", [])
-                if not _contains_input(subs, {"SpriteMultitouchJoystick::MultitouchButton::IsPressed"}):
-                    subs.append(touch)
-                return
-    # Release gates are represented as separate inverted conditions.
-    if not any(
-        isinstance(c, dict)
-        and c.get("type", {}).get("value") == "SpriteMultitouchJoystick::MultitouchButton::IsPressed"
-        for c in conditions
-    ):
-        conditions.append(touch)
+        if isinstance(c, dict) and c.get("type", {}).get("value") == "BuiltinCommonInstructions::Or":
+            subs = c.setdefault("subInstructions", [])
+            if not any(
+                isinstance(s, dict)
+                and s.get("type", {}).get("value") == "SpriteMultitouchJoystick::MultitouchButton::IsPressed"
+                for s in subs
+            ):
+                subs.append(touch)
+            return
+    _add_touch_condition(conditions, object_name, inverted)
 
 
 def patch_touch_inputs(node):
-    """Patch Vaniards' FSM so touch actions are first-class inputs.
-
-    The original game FSM listens to keyboard/gamepad input. The official
-    multitouch mapper is intentionally not used for the character because the
-    custom FSM also simulates platformer controls. Instead, the same FSM now
-    accepts the independent multitouch buttons, while joystick X movement is
-    simulated every frame below.
-    """
+    """Make the custom FSM accept independent multitouch buttons."""
     if isinstance(node, dict):
         if node.get("type") == "BuiltinCommonInstructions::Standard":
             conditions = node.get("conditions", [])
-            _add_touch_to_condition_list(
-                conditions, {"Gamepads::C_Button_pressed", "KeyFromTextPressed"},
-                "TouchJump", False
-            ) if _contains_input(conditions, {"gamepadJump", "keyboardJump"}) else None
-            _add_touch_to_condition_list(
-                conditions, {"Gamepads::C_Button_pressed", "KeyFromTextPressed"},
-                "TouchAttack", False
-            ) if _contains_input(conditions, {"gamepadAttack", "keyboardAttack"}) else None
-            _add_touch_to_condition_list(
-                conditions, {"Gamepads::C_Button_pressed", "KeyFromTextPressed"},
-                "TouchDash", False
-            ) if _contains_input(conditions, {"gamepadDash", "keyboardDash"}) else None
-
-            # The three release gates must also require the corresponding touch
-            # button to be released before the action can be used again.
-            if _contains_input(conditions, {"gamepadJump", "keyboardJump"}):
-                # Only add an inverted touch condition to a release-style node.
-                if any(
-                    isinstance(c, dict) and c.get("type", {}).get("inverted")
+            targets = [
+                ({"gamepadJump", "keyboardJump"}, "TouchJump"),
+                ({"gamepadAttack", "keyboardAttack"}, "TouchAttack"),
+                ({"gamepadDash", "keyboardDash"}, "TouchDash"),
+            ]
+            for names, button in targets:
+                if not _contains_input(conditions, names):
+                    continue
+                # A release gate contains inverted keyboard/gamepad conditions.
+                release_gate = any(
+                    isinstance(c, dict)
+                    and c.get("type", {}).get("inverted", False)
                     and _contains_input(c, {"Gamepads::C_Button_pressed", "KeyFromTextPressed"})
                     for c in conditions
-                ):
-                    _add_touch_to_condition_list(
-                        conditions, {"gamepadJump", "keyboardJump"}, "TouchJump", True
-                    )
-            if _contains_input(conditions, {"gamepadAttack", "keyboardAttack"}):
-                if any(
-                    isinstance(c, dict) and c.get("type", {}).get("inverted")
-                    and _contains_input(c, {"Gamepads::C_Button_pressed", "KeyFromTextPressed"})
-                    for c in conditions
-                ):
-                    _add_touch_to_condition_list(
-                        conditions, {"gamepadAttack", "keyboardAttack"}, "TouchAttack", True
-                    )
-            if _contains_input(conditions, {"gamepadDash", "keyboardDash"}):
-                if any(
-                    isinstance(c, dict) and c.get("type", {}).get("inverted")
-                    and _contains_input(c, {"Gamepads::C_Button_pressed", "KeyFromTextPressed"})
-                    for c in conditions
-                ):
-                    _add_touch_to_condition_list(
-                        conditions, {"gamepadDash", "keyboardDash"}, "TouchDash", True
-                    )
+                )
+                _add_touch_to_condition_list(conditions, names, button, release_gate)
         for v in node.values():
             patch_touch_inputs(v)
     elif isinstance(node, list):
@@ -222,9 +197,8 @@ def patch(project_path: Path, reference_path: Path):
     hero = next((o for o in objects if o.get("name") == "HeroHitbox"), None)
     if hero is None:
         raise RuntimeError("HeroHitbox not found")
-    # Do not use PlatformerMultitouchMapper here. Vaniards has a custom FSM
-    # that already simulates platformer controls; mixing two controllers was
-    # causing the horizontal input to be cancelled when a second finger jumped.
+    # The custom Vaniards FSM already simulates platformer controls. Removing
+    # the mapper prevents two independent control systems from cancelling each other.
     hero["behaviors"] = [b for b in hero.get("behaviors", []) if b.get("type") != MAPPER]
 
     instances = stage.setdefault("instances", [])
@@ -241,7 +215,7 @@ def patch(project_path: Path, reference_path: Path):
             inst.update({"x": 0, "y": 0, "width": 118, "height": 118,
                          "customSize": True, "layer": "GUI", "opacity": 255})
 
-    # Add touch input to the existing FSM and direct joystick movement events.
+    # Patch only Vaniards' own Stage FSM functions, not the embedded extension functions.
     for function in data.get("eventsFunctions", []):
         if function.get("associatedLayout") == "Stage" and function.get("name", "").startswith("HeroFSM"):
             patch_touch_inputs(function.get("events", []))
