@@ -86,8 +86,15 @@ def _contains_input(node, names):
         typ = node.get("type")
         if isinstance(typ, dict) and typ.get("value") in names:
             return True
-        return any(_contains_input(v, names) for k, v in node.items()
-                   if k in ("conditions", "subInstructions", "events"))
+        # GDevelop stores keyboard/gamepad identifiers in the condition parameters,
+        # not in the condition type itself (e.g. KeyFromTextPressed + keyboardJump).
+        for key, value in node.items():
+            if key == "parameters":
+                if isinstance(value, list) and any(isinstance(v, str) and v in names for v in value):
+                    return True
+            elif key in ("conditions", "subInstructions", "events") and _contains_input(value, names):
+                return True
+        return False
     if isinstance(node, list):
         return any(_contains_input(v, names) for v in node)
     return False
@@ -142,7 +149,6 @@ def patch_touch_inputs(node):
             for names, button in targets:
                 if not _contains_input(conditions, names):
                     continue
-                # A release gate contains inverted keyboard/gamepad conditions.
                 release_gate = any(
                     isinstance(c, dict)
                     and c.get("type", {}).get("inverted", False)
@@ -197,8 +203,6 @@ def patch(project_path: Path, reference_path: Path):
     hero = next((o for o in objects if o.get("name") == "HeroHitbox"), None)
     if hero is None:
         raise RuntimeError("HeroHitbox not found")
-    # The custom Vaniards FSM already simulates platformer controls. Removing
-    # the mapper prevents two independent control systems from cancelling each other.
     hero["behaviors"] = [b for b in hero.get("behaviors", []) if b.get("type") != MAPPER]
 
     instances = stage.setdefault("instances", [])
@@ -215,7 +219,6 @@ def patch(project_path: Path, reference_path: Path):
             inst.update({"x": 0, "y": 0, "width": 118, "height": 118,
                          "customSize": True, "layer": "GUI", "opacity": 255})
 
-    # Patch only Vaniards' own Stage FSM functions, not the embedded extension functions.
     for function in data.get("eventsFunctions", []):
         if function.get("associatedLayout") == "Stage" and function.get("name", "").startswith("HeroFSM"):
             patch_touch_inputs(function.get("events", []))
