@@ -53,14 +53,10 @@ def button_condition(name: str) -> dict:
     return condition(BUTTON_CONDITION, [name, "MultitouchButton", ""])
 
 
-def hero_state_condition(variable_index: int, value: int = 0) -> dict:
+def hero_number_condition(variable_name: str, operator: str = "=", value: str = "0") -> dict:
     return condition(
-        "BuiltinCommonInstructions::CompareNumbers",
-        [
-            f'Hero.Variable({variable_index})',
-            "=",
-            str(value),
-        ],
+        "NumberObjectVariable",
+        ["Hero", variable_name, operator, value],
     )
 
 
@@ -74,12 +70,12 @@ def patch(project_path: Path) -> None:
     marker = "Mobile Action Buttons FSM Bridge"
     events = [e for e in events if e.get("name") != marker]
 
-    # Hero variables: 6=hasJumped, 7=hasAttacked, 8=hasDashed.
-    # Dash additionally requires enough stamina, matching the original FSM.
+    # Hero variables: hasJumped, hasAttacked and hasDashed are the original
+    # FSM gates. Dash additionally requires heroStam >= global DashCost.
     jump = standard(
         [
             button_condition("TouchJump"),
-            hero_state_condition(6),
+            hero_number_condition("hasJumped"),
         ],
         [
             action(
@@ -91,7 +87,7 @@ def patch(project_path: Path) -> None:
     attack = standard(
         [
             button_condition("TouchAttack"),
-            hero_state_condition(7),
+            hero_number_condition("hasAttacked"),
         ],
         [
             action(
@@ -103,11 +99,8 @@ def patch(project_path: Path) -> None:
     dash = standard(
         [
             button_condition("TouchDash"),
-            hero_state_condition(8),
-            condition(
-                "BuiltinCommonInstructions::CompareNumbers",
-                ['Hero.Variable(3)', ">=", 'GlobalVariable(DashCost)'],
-            ),
+            hero_number_condition("hasDashed"),
+            hero_number_condition("heroStam", ">=", "GlobalVariable(DashCost)"),
         ],
         [
             action(
