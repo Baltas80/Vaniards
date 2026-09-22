@@ -59,6 +59,23 @@ jobs:
           print("Project JSON valid:", p.stat().st_size, "bytes")
           PY
 
+      - name: Fix Title menu selection
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/patch_title_menu.py game/Vaniards.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("game/Vaniards.json").read_text(encoding="utf-8"))
+          title = next(s for s in data["layouts"] if s.get("name") == "Title")
+          marker = "Direct touch/click menu selection"
+          assert any(e.get("comment") == marker for e in title.get("events", []))
+          for name in ("BitmapMenuStart", "BitmapMenuCredits", "BitmapMenuExit"):
+              assert any(o.get("name") == name for o in title.get("objects", []))
+          print("Title menu validated: Start, Credits and Exit have direct touch/click handlers.")
+          PY
+
       - name: Prepare official GDevelop multitouch extension
         shell: bash
         run: |
