@@ -262,6 +262,16 @@ def patch(project_path: Path, reference_path: Path):
         shared.append({"name": "MultitouchButton", "type": BUTTON})
 
     project_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # The original game uses a custom Hero FSM, so button behaviors alone are
+    # not enough. Add explicit independent touch transitions after the complete
+    # joystick patch has been written.
+    try:
+        from patch_mobile_action_buttons import patch as patch_action_buttons
+        patch_action_buttons(project_path)
+    except Exception as exc:
+        raise RuntimeError(f"Mobile action-button bridge failed: {exc}") from exc
+
     print("Robust multitouch controls installed: independent joystick movement + touch jump/attack/dash.")
 
 
