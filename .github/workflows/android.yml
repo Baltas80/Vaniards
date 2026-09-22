@@ -73,7 +73,6 @@ jobs:
           out = Path("game/assets/vaniards_touch_transparent.png")
           def chunk(kind, data):
               return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xffffffff)
-          # 2x2 transparent RGBA PNG.
           raw = b"\x00\x00\x00\x00" + b"\x00\x00\x00\x00"
           png = (
               b"\x89PNG\r\n\x1a\n" +
@@ -100,12 +99,14 @@ jobs:
           hero = next(o for o in stage["objects"] if o.get("name") == "HeroHitbox")
           assert len(ext) == 1
           assert any(o.get("name") == "MoveJoystick" and o.get("type") == "SpriteMultitouchJoystick::SpriteMultitouchJoystick" for o in stage["objects"])
-          assert any(b.get("type") == "SpriteMultitouchJoystick::PlatformerMultitouchMapper" for b in hero.get("behaviors", []))
+          assert not any(b.get("type") == "SpriteMultitouchJoystick::PlatformerMultitouchMapper" for b in hero.get("behaviors", []))
+          names = {e.get("name") for e in stage.get("events", [])}
+          assert "Mobile Joystick Movement" in names
           for name in ("TouchJump", "TouchAttack", "TouchDash"):
               obj = next(o for o in stage["objects"] if o.get("name") == name)
               assert any(b.get("type") == "SpriteMultitouchJoystick::MultitouchButton" for b in obj.get("behaviors", []))
           assert Path("game/assets/vaniards_touch_transparent.png").exists()
-          print("Official multitouch extension installed and validated.")
+          print("Multitouch extension + independent joystick movement validated.")
           PY
 
       - name: Recover game assets from reference APK
