@@ -12,22 +12,18 @@ jobs:
   android:
     runs-on: ubuntu-latest
     timeout-minutes: 45
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Node
         uses: actions/setup-node@v5
         with:
           node-version: 22
-
       - name: Set up Java
         uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
-
       - name: Install Android 36 SDK
         shell: bash
         run: |
@@ -42,7 +38,6 @@ jobs:
           command -v sdkmanager
           yes | sdkmanager --licenses >/dev/null || true
           sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
-
       - name: Assemble GDevelop project
         shell: bash
         run: |
@@ -52,13 +47,12 @@ jobs:
           python3 - <<'PY'
           import json
           from pathlib import Path
-          p = Path("game/Vaniards.json")
-          data = json.loads(p.read_text(encoding="utf-8"))
-          data.setdefault("properties", {})["latestCompilationDirectory"] = str(Path("build/html5").resolve())
-          p.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-          print("Project JSON valid:", p.stat().st_size, "bytes")
+          p=Path("game/Vaniards.json")
+          data=json.loads(p.read_text(encoding="utf-8"))
+          data.setdefault("properties",{})["latestCompilationDirectory"]=str(Path("build/html5").resolve())
+          p.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding="utf-8")
+          print("Project JSON valid:",p.stat().st_size,"bytes")
           PY
-
       - name: Fix Title menu selection
         shell: bash
         run: |
@@ -67,15 +61,13 @@ jobs:
           python3 - <<'PY'
           import json
           from pathlib import Path
-          data = json.loads(Path("game/Vaniards.json").read_text(encoding="utf-8"))
-          title = next(s for s in data["layouts"] if s.get("name") == "Title")
-          marker = "Direct touch/click menu selection"
-          assert any(e.get("comment") == marker for e in title.get("events", []))
-          for name in ("BitmapMenuStart", "BitmapMenuCredits", "BitmapMenuExit"):
-              assert any(o.get("name") == name for o in title.get("objects", []))
-          print("Title menu validated: Start, Credits and Exit have direct touch/click handlers.")
+          data=json.loads(Path("game/Vaniards.json").read_text(encoding="utf-8"))
+          title=next(s for s in data["layouts"] if s.get("name")=="Title")
+          assert any(e.get("comment")=="Direct touch/click menu selection" for e in title.get("events",[]))
+          for name in ("BitmapMenuStart","BitmapMenuCredits","BitmapMenuExit"):
+              assert any(o.get("name")==name for o in title["objects"])
+          print("Title menu validated.")
           PY
-
       - name: Prepare official GDevelop multitouch extension
         shell: bash
         run: |
@@ -84,24 +76,16 @@ jobs:
           curl -L --fail --retry 3 -o .gdevelop-reference/starting-platformer.json \
             "https://raw.githubusercontent.com/GDevelopApp/GDevelop-examples/2f42a1c2138f401facb6c801711b5cdcb1b53c84/examples/starting-platformer/starting-platformer.json"
           python3 - <<'PY'
-          import json, struct, zlib
+          import json,struct,zlib
           from pathlib import Path
-
-          out = Path("game/assets/vaniards_touch_transparent.png")
-          def chunk(kind, data):
-              return struct.pack(">I", len(data)) + kind + data + struct.pack(">I", zlib.crc32(kind + data) & 0xffffffff)
-          raw = b"\x00\x00\x00\x00" + b"\x00\x00\x00\x00"
-          png = (
-              b"\x89PNG\r\n\x1a\n" +
-              chunk(b"IHDR", struct.pack(">IIBBBBB", 2, 2, 8, 6, 0, 0, 0)) +
-              chunk(b"IDAT", zlib.compress(raw)) +
-              chunk(b"IEND", b"")
-          )
-          out.write_bytes(png)
+          out=Path("game/assets/vaniards_touch_transparent.png")
+          def chunk(kind,data):
+              return struct.pack(">I",len(data))+kind+data+struct.pack(">I",zlib.crc32(kind+data)&0xffffffff)
+          raw=b"\x00\x00\x00\x00"+b"\x00\x00\x00\x00"
+          out.write_bytes(b"\x89PNG\r\n\x1a\n"+chunk(b"IHDR",struct.pack(">IIBBBBB",2,2,8,6,0,0,0))+chunk(b"IDAT",zlib.compress(raw))+chunk(b"IEND",b""))
           json.loads(Path(".gdevelop-reference/starting-platformer.json").read_text(encoding="utf-8"))
-          print("Reference project + transparent joystick asset ready.")
+          print("Reference project ready.")
           PY
-
       - name: Install official SpriteMultitouchJoystick controls
         shell: bash
         run: |
@@ -110,60 +94,51 @@ jobs:
           python3 - <<'PY'
           import json
           from pathlib import Path
-          data = json.loads(Path("game/Vaniards.json").read_text(encoding="utf-8"))
-          stage = next(s for s in data["layouts"] if s.get("name") == "Stage")
-          ext = [e for e in data.get("eventsFunctionsExtensions", []) if e.get("name") == "SpriteMultitouchJoystick"]
-          hero = next(o for o in stage["objects"] if o.get("name") == "HeroHitbox")
-          assert len(ext) == 1
-          assert any(o.get("name") == "MoveJoystick" and o.get("type") == "SpriteMultitouchJoystick::SpriteMultitouchJoystick" for o in stage["objects"])
-          assert not any(b.get("type") == "SpriteMultitouchJoystick::PlatformerMultitouchMapper" for b in hero.get("behaviors", []))
-          names = {e.get("name") for e in stage.get("events", [])}
-          assert "Mobile Joystick Movement" in names
-          for name in ("TouchJump", "TouchAttack", "TouchDash"):
-              obj = next(o for o in stage["objects"] if o.get("name") == name)
-              assert any(b.get("type") == "SpriteMultitouchJoystick::MultitouchButton" for b in obj.get("behaviors", []))
+          data=json.loads(Path("game/Vaniards.json").read_text(encoding="utf-8"))
+          stage=next(s for s in data["layouts"] if s.get("name")=="Stage")
+          ext=[e for e in data.get("eventsFunctionsExtensions",[]) if e.get("name")=="SpriteMultitouchJoystick"]
+          hero=next(o for o in stage["objects"] if o.get("name")=="HeroHitbox")
+          assert len(ext)==1
+          assert any(o.get("name")=="MoveJoystick" and o.get("type")=="SpriteMultitouchJoystick::SpriteMultitouchJoystick" for o in stage["objects"])
+          assert any(b.get("type")=="SpriteMultitouchJoystick::PlatformerMultitouchMapper" for b in hero.get("behaviors",[]))
+          names={e.get("name") for e in stage.get("events",[])}
+          assert "Mobile Control Layout" in names
+          assert "Mobile Action Buttons FSM Bridge" in names
+          for name in ("TouchJump","TouchAttack","TouchDash"):
+              obj=next(o for o in stage["objects"] if o.get("name")==name)
+              assert any(b.get("type")=="SpriteMultitouchJoystick::MultitouchButton" for b in obj.get("behaviors",[]))
           assert Path("game/assets/vaniards_touch_transparent.png").exists()
-          print("Multitouch extension + independent joystick movement validated.")
+          print("Official mapper + native jump + independent action buttons validated.")
           PY
-
       - name: Recover game assets from reference APK
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p game/assets .apk
           unzip -q "Vaniards - Copy-1_0_1.apk" 'assets/www/*' -d .apk
-          find .apk/assets/www -maxdepth 1 -type f \
-            \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.ogg' -o -name '*.wav' -o -name '*.ttf' -o -name '*.fnt' -o -name '*.json' \) \
-            -exec cp -f {} game/assets/ \;
+          find .apk/assets/www -maxdepth 1 -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' -o -name '*.ogg' -o -name '*.wav' -o -name '*.ttf' -o -name '*.fnt' -o -name '*.json' \) -exec cp -f {} game/assets/ \;
           test -f game/assets/Level1.json
           echo "Recovered assets: $(find game/assets -maxdepth 1 -type f | wc -l)"
-
       - name: Download GDevelop 5.6.282
         shell: bash
         run: |
           set -euo pipefail
-          curl -L --fail --retry 3 -o gdevelop.AppImage \
-            "https://github.com/4ian/GDevelop/releases/download/v5.6.282/GDevelop-5-5.6.282.AppImage"
+          curl -L --fail --retry 3 -o gdevelop.AppImage "https://github.com/4ian/GDevelop/releases/download/v5.6.282/GDevelop-5-5.6.282.AppImage"
           chmod +x gdevelop.AppImage
-
       - name: Export GDevelop HTML5
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p build/html5
-          xvfb-run -a ./gdevelop.AppImage --appimage-extract-and-run --no-sandbox --disable-gpu --disable-update-check \
-            --run-command EXPORT_HTML5_EXTERNAL "$PWD/game/Vaniards.json"
+          xvfb-run -a ./gdevelop.AppImage --appimage-extract-and-run --no-sandbox --disable-gpu --disable-update-check --run-command EXPORT_HTML5_EXTERNAL "$PWD/game/Vaniards.json"
           test -f build/html5/index.html
           echo "HTML5 export completed."
-
       - name: Inject joystick-style mobile visuals
         shell: bash
         run: |
           set -euo pipefail
           python3 scripts/inject_mobile_controls_overlay.py build/html5/index.html
           grep -q "vaniards-mobile-controls" build/html5/index.html
-          echo "Mobile joystick overlay injected."
-
       - name: Prepare Cordova Android shell
         shell: bash
         run: |
@@ -173,20 +148,19 @@ jobs:
           cp -a build/html5/. android-build/www/
           python3 - <<'PY'
           from pathlib import Path
-          p = Path("android-build/config.xml")
-          s = p.read_text(encoding="utf-8")
-          s = s.replace("</widget>", '''  <preference name="Orientation" value="landscape" />
+          p=Path("android-build/config.xml")
+          s=p.read_text(encoding="utf-8")
+          s=s.replace("</widget>",'''  <preference name="Orientation" value="landscape" />
             <preference name="Fullscreen" value="true" />
             <preference name="android-minSdkVersion" value="23" />
             <preference name="android-targetSdkVersion" value="36" />
             <preference name="android-compileSdkVersion" value="36" />
           </widget>''')
-          p.write_text(s, encoding="utf-8")
+          p.write_text(s,encoding="utf-8")
           PY
           cd android-build
           cordova platform add android@15.1.0
           cordova requirements
-
       - name: Build tactile APK
         shell: bash
         run: |
@@ -195,7 +169,6 @@ jobs:
           cordova build android --debug
           test -f platforms/android/app/build/outputs/apk/debug/app-debug.apk
           cp platforms/android/app/build/outputs/apk/debug/app-debug.apk ../Vaniards-touch-1.0.1-debug.apk
-
       - name: Build unsigned release AAB
         shell: bash
         run: |
@@ -204,7 +177,6 @@ jobs:
           cordova build android --release || true
           AAB=$(find platforms/android/app/build/outputs -type f -name '*.aab' | head -n 1 || true)
           if [ -n "$AAB" ]; then cp "$AAB" ../Vaniards-1.0.1-unsigned.aab; fi
-
       - name: Sign release AAB
         if: ${{ env.ANDROID_KEYSTORE_BASE64 != '' && env.ANDROID_KEYSTORE_PASSWORD != '' && env.ANDROID_KEY_ALIAS != '' && env.ANDROID_KEY_PASSWORD != '' }}
         env:
@@ -219,7 +191,6 @@ jobs:
           jarsigner -keystore upload-keystore.jks -storepass "$ANDROID_KEYSTORE_PASSWORD" -keypass "$ANDROID_KEY_PASSWORD" -signedjar Vaniards-1.0.1.aab Vaniards-1.0.1-unsigned.aab "$ANDROID_KEY_ALIAS"
           jarsigner -verify -strict Vaniards-1.0.1.aab
           rm -f upload-keystore.jks
-
       - name: Publish Android artifacts
         uses: actions/upload-artifact@v4
         with:
